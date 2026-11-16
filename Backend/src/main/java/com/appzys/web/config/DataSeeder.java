@@ -1,22 +1,37 @@
 package com.appzys.web.config;
 
 import com.appzys.web.entity.CaseStudy;
+import com.appzys.web.entity.Lead;
+import com.appzys.web.entity.User;
 import com.appzys.web.repository.CaseStudyRepository;
+import com.appzys.web.repository.LeadRepository;
+import com.appzys.web.repository.UserRepository;
+import com.appzys.web.util.PasswordUtil;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import java.util.List;
 
 @Component
 public class DataSeeder implements CommandLineRunner {
 
     private final CaseStudyRepository caseStudyRepository;
+    private final UserRepository userRepository;
+    private final LeadRepository leadRepository;
 
-    public DataSeeder(CaseStudyRepository caseStudyRepository) {
+    public DataSeeder(
+            CaseStudyRepository caseStudyRepository,
+            UserRepository userRepository,
+            LeadRepository leadRepository
+    ) {
         this.caseStudyRepository = caseStudyRepository;
+        this.userRepository = userRepository;
+        this.leadRepository = leadRepository;
     }
 
     @Override
     public void run(String... args) {
+        seedAdminUser();
+        seedInitialLeads();
+
         seedIfMissing("copy-text-on-screen", () -> {
             CaseStudy copyText = new CaseStudy();
             copyText.setSlug("copy-text-on-screen");
@@ -76,6 +91,47 @@ public class DataSeeder implements CommandLineRunner {
             handwriting.setFeatured(true);
             return handwriting;
         });
+    }
+
+    private void seedAdminUser() {
+        if (!userRepository.existsByUsername("admin@appzys.com")) {
+            User admin = new User();
+            admin.setUsername("admin@appzys.com");
+            admin.setPassword(PasswordUtil.hash("AppzysAdmin2026!"));
+            admin.setFullName("Appzys Studio Director");
+            admin.setRole("ROLE_ADMIN");
+            userRepository.save(admin);
+        }
+    }
+
+    private void seedInitialLeads() {
+        if (leadRepository.count() == 0) {
+            Lead lead1 = new Lead();
+            lead1.setName("Suresh Kumar");
+            lead1.setEmail("suresh.kumar@medtechinnovate.com");
+            lead1.setPhone("+91 98401 23456");
+            lead1.setCompany("MedTech Innovate");
+            lead1.setServiceType("02. AI Integration & Applications");
+            lead1.setBudgetRange("$15,000 - $35,000");
+            lead1.setMessage("Looking to build a Flutter medical assistant app with on-device document OCR and patient report summarization. Need 48-hr feasibility assessment.");
+            lead1.setSourcePage("/contact");
+            lead1.setStatus("NEW");
+            lead1.setInternalNotes("Qualified B2B inquiry. Scheduled architecture discovery call for Wednesday 11am.");
+            leadRepository.save(lead1);
+
+            Lead lead2 = new Lead();
+            lead2.setName("Sarah Jenkins");
+            lead2.setEmail("sarah@eduvisionlabs.io");
+            lead2.setPhone("+1 (415) 890-2341");
+            lead2.setCompany("EduVision Labs");
+            lead2.setServiceType("01. Mobile App Development (Flutter)");
+            lead2.setBudgetRange("$35,000+");
+            lead2.setMessage("We have an existing edtech web platform and need a high-performance cross-platform Flutter app for iOS and Android with offline caching.");
+            lead2.setSourcePage("/services/mobile-app-development");
+            lead2.setStatus("CONTACTED");
+            lead2.setInternalNotes("Sent mutual NDA and shared Appzys TestFlight build demo. Client reviewing with product team.");
+            leadRepository.save(lead2);
+        }
     }
 
     private void seedIfMissing(String slug, java.util.function.Supplier<CaseStudy> supplier) {

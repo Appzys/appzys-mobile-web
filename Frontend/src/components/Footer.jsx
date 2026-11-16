@@ -49,6 +49,11 @@ export default function Footer() {
                   48-Hr Free Architecture Audit
                 </Link>
               </li>
+              <li>
+                <Link to="/admin/login" className="text-blue-300/80 hover:text-white">
+                  Staff Admin Login
+                </Link>
+              </li>
             </ul>
           </div>
 

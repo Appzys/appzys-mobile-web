@@ -38,6 +38,9 @@ public class Lead {
     @Column(nullable = false, length = 32)
     private String status = "NEW";
 
+    @Column(name = "internal_notes", columnDefinition = "TEXT")
+    private String internalNotes;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
@@ -68,5 +71,7 @@ public class Lead {
     public void setSourcePage(String sourcePage) { this.sourcePage = sourcePage; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+    public String getInternalNotes() { return internalNotes; }
+    public void setInternalNotes(String internalNotes) { this.internalNotes = internalNotes; }
     public Instant getCreatedAt() { return createdAt; }
 }
