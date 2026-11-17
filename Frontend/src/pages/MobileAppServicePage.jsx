@@ -89,10 +89,10 @@ const UPGRADED_ENGAGEMENT_MODELS = [
 ]
 
 const SERVICE_TAGS = [
-  ['Android & iOS', 'Provider State', 'Firebase & REST'],
-  ['Audio / Speech AI', 'PDF & OCR', 'Cloud Functions Proxy'],
-  ['Codebase Audit', 'Bug Fixes & SDK Upgrades', 'Monthly Retainer'],
-  ['Team Extension', 'White-Label Agency', 'Monthly Allocation'],
+  ['01 Application Development', '02 Feature Implementation', '03 Testing & Release'],
+  ['API & Backend Integration', 'Third-party Services', 'Data & Workflow Integration'],
+  ['01 Assess Code', '02 Stabilize Crashes', '03 Enhance Features', '04 Maintain Releases'],
+  ['Model 01 Dedicated Dev', 'Model 02 Team Extension', 'Model 03 White-label'],
 ]
 
 const SIX_STEP_PROCESS = [
@@ -568,6 +568,12 @@ export default function MobileAppServicePage() {
                       {item.title}
                     </h3>
 
+                    {item.leadQuestion && (
+                      <div className="mt-2 text-xs sm:text-sm font-bold text-[#1D63ED] bg-blue-50/80 rounded-xl px-3.5 py-1.5 inline-block">
+                        &ldquo;{item.leadQuestion}&rdquo;
+                      </div>
+                    )}
+
                     <p className="mt-3 text-sm leading-relaxed text-black sm:text-base">
                       {item.description}
                     </p>
@@ -619,14 +625,14 @@ export default function MobileAppServicePage() {
           </div>
 
           <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
-            <table className="w-full min-w-[680px] text-left text-sm">
+            <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="bg-gradient-to-r from-[#0A192F] via-[#0F2557] to-[#1D4ED8] text-white">
                 <tr>
-                  <th className="px-5 py-4 font-semibold">Dimension</th>
-                  <th className="px-5 py-4 font-semibold">01. Mobile App Dev</th>
-                  <th className="px-5 py-4 font-semibold">02. AI Integration</th>
-                  <th className="px-5 py-4 font-semibold">03. Enhancement</th>
-                  <th className="px-5 py-4 font-semibold">04. Dedicated Flutter</th>
+                  <th className="px-5 py-4 font-bold">Dimension</th>
+                  <th className="px-5 py-4 font-bold">01. Mobile App Development</th>
+                  <th className="px-5 py-4 font-bold">02. Mobile App Integration</th>
+                  <th className="px-5 py-4 font-bold">03. App Enhancement &amp; Maintenance</th>
+                  <th className="px-5 py-4 font-bold">04. Dedicated Flutter Development</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
@@ -641,56 +647,6 @@ export default function MobileAppServicePage() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      {/* 6 AI Capabilities */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-              Service 02 Deep Dive
-            </span>
-            <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-3xl">
-              6 AI Capabilities We Integrate Into Flutter Apps
-            </h2>
-            <p className="mt-2 text-sm text-black">
-              Built with prompt validation, token/cost safeguards, and Firebase Cloud Functions API-key protection.
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {AI_CAPABILITIES.map((cap) => (
-              <div
-                key={cap.code}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-lg"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-blue-600 shadow-xs ring-1 ring-slate-200/80 transition group-hover:bg-[#1D63ED] group-hover:text-white">
-                    <Cpu className="h-4 w-4 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
-                  </span>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-slate-700 ring-1 ring-slate-200">
-                    Capability {cap.code}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-display text-base font-bold text-black transition-colors group-hover:text-blue-600">
-                  {cap.title}
-                </h3>
-                <ul className="mt-3 space-y-1.5 text-xs text-black">
-                  {cap.items.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2">
-                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-blue-600" />
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 border-t border-slate-200 pt-3 text-[11px] font-medium text-slate-700">
-                  Use cases: {cap.useCases}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -932,70 +888,106 @@ export default function MobileAppServicePage() {
         </div>
       </section>
 
-      {/* 3. 3 Flexible Engagement Models: Fixed Scope MVP vs Dedicated Developer vs Monthly Retainer cards */}
-      <section className="bg-slate-50 py-16 sm:py-20 border-t border-slate-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+      {/* 3. Orange Mantra Style Stacking Cards: 3 Flexible Engagement Models */}
+      <section className="bg-[#FAFBFD] py-16 sm:py-24 border-t border-slate-200">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
               Commercial &amp; Partnership Models
             </span>
-            <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-4xl">
+            <h2 className="mt-4 font-display text-3xl font-black text-[#0A192F] sm:text-4xl lg:text-5xl">
               3 Flexible Engagement Models
             </h2>
-            <p className="mt-2.5 text-sm text-slate-700 sm:text-base">
-              Fixed Scope MVP vs Dedicated Developer vs Monthly Retainer cards. Select the partnership model tailored for your launch timeline and engineering needs.
+            <p className="mt-3 text-sm text-slate-600 sm:text-base leading-relaxed">
+              Tailored partnership models designed to match your product development stage, budget, and engineering timeline.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {UPGRADED_ENGAGEMENT_MODELS.map((model) => (
-              <div
-                key={model.name}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg sm:p-7"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity group-hover:opacity-100" />
-                <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-[#1D63ED]">
-                      {model.tierBadge}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500">
-                      <Clock className="h-3.5 w-3.5" />
-                      {model.timeline}
-                    </span>
+          {/* Stacking Sticky Cards Container */}
+          <div className="mt-14 space-y-8">
+            {UPGRADED_ENGAGEMENT_MODELS.map((model, idx) => {
+              // 1 & 3: Normal Blue (#1D63ED), 2: Deep Navy Blue (#0A192F)
+              const isNavy = idx === 1
+              const bgColors = isNavy
+                ? 'from-[#0A192F]/5 via-white to-white border-slate-300'
+                : 'from-blue-50/70 via-white to-white border-blue-200'
+              const badgeColors = isNavy
+                ? 'bg-[#0A192F]/10 text-[#0A192F] border-[#0A192F]/20'
+                : 'bg-blue-50 text-[#1D63ED] border-blue-200'
+              const numberBadgeBg = isNavy
+                ? 'bg-[#0A192F] text-white shadow-[#0A192F]/25'
+                : 'bg-[#1D63ED] text-white shadow-blue-500/25'
+
+              return (
+                <div
+                  key={model.name}
+                  style={{ top: `${90 + idx * 24}px` }}
+                  className={`sticky rounded-3xl border bg-gradient-to-br ${bgColors} p-7 sm:p-10 shadow-lg backdrop-blur-md transition-all duration-300`}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-5">
+                    <div className="flex items-center gap-3">
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl font-black text-sm shadow-md ${numberBadgeBg}`}>
+                        0{idx + 1}
+                      </span>
+                      <span className={`rounded-full border px-3.5 py-1 text-xs font-black uppercase tracking-wider ${badgeColors}`}>
+                        {model.tierBadge}
+                      </span>
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600">
+                      <Clock className="h-4 w-4 text-slate-400" />
+                      <span>{model.timeline}</span>
+                    </div>
                   </div>
 
-                  <h3 className="mt-4 font-display text-xl font-bold text-black transition-colors group-hover:text-blue-600">
-                    {model.name}
-                  </h3>
-                  <p className="mt-2.5 text-xs leading-relaxed text-slate-600">
-                    {model.idealFor}
-                  </p>
+                  <div className="mt-6 grid gap-8 lg:grid-cols-12 items-start">
+                    <div className="lg:col-span-6">
+                      <h3 className="font-display text-2xl font-black text-[#0A192F] sm:text-3xl">
+                        {model.name}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600 font-medium sm:text-base">
+                        {model.idealFor}
+                      </p>
 
-                  <div className="mt-6 border-t border-slate-100 pt-5">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-3">
-                      Included in Model:
+                      <div className="mt-8">
+                        <Link
+                          to={`/contact?model=${encodeURIComponent(model.name)}&service=${encodeURIComponent(model.serviceQuery)}`}
+                          className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-md transition ${
+                            isNavy ? 'bg-[#0A192F] hover:bg-[#152a4a]' : 'bg-[#1D63ED] hover:bg-[#1652CA]'
+                          }`}
+                        >
+                          <span>Select {model.name}</span>
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
                     </div>
-                    <ul className="space-y-2.5 text-xs text-black">
-                      {model.points.map((pt) => (
-                        <li key={pt} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                    <div className="lg:col-span-6 rounded-2xl bg-white/90 p-6 border border-slate-200/80 shadow-2xs">
+                      <div className="text-xs font-black uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+                        <CheckCircle2 className={`h-4 w-4 ${isNavy ? 'text-[#0A192F]' : 'text-[#1D63ED]'}`} />
+                        <span>Included Engineering Scope:</span>
+                      </div>
+                      <ul className="space-y-3">
+                        {model.points.map((pt) => (
+                          <li key={pt} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                            <span className={`mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
+                              isNavy ? 'bg-slate-100 text-[#0A192F]' : 'bg-blue-50 text-[#1D63ED]'
+                            }`}>
+                              <Check className="h-2.5 w-2.5 stroke-[3]" />
+                            </span>
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Big subtle watermark number */}
+                  <div className="pointer-events-none absolute right-8 bottom-4 select-none font-display text-8xl font-black text-slate-900/5">
+                    0{idx + 1}
                   </div>
                 </div>
-
-                <Link
-                  to={`/contact?model=${encodeURIComponent(model.name)}&service=${encodeURIComponent(model.serviceQuery)}`}
-                  className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#1D63ED] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1652CA] shadow-sm shadow-blue-500/20"
-                >
-                  Select {model.name}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

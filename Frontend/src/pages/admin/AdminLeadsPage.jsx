@@ -8,6 +8,7 @@ import {
   ExternalLink,
   FileText,
   Filter,
+  Inbox,
   Mail,
   MessageSquare,
   Phone,

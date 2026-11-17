@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Smartphone, MapPin, Mail, ShieldCheck } from 'lucide-react'
+import { Smartphone, MapPin, Mail, Phone, Globe, Linkedin, ShieldCheck } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,17 +8,27 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D63ED] text-white">
-                <Smartphone className="h-5 w-5" />
+              {/* Exact Appzys Logo from Uploaded Image */}
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white p-1 shadow-md overflow-hidden">
+                <img
+                  src="/appzys-logo.png"
+                  alt="Appzys Logo"
+                  className="h-full w-full object-contain"
+                />
               </div>
-              <span className="font-display text-xl font-extrabold text-white">
-                Appzys Technologies
-              </span>
+              <div>
+                <span className="font-display text-xl font-black text-white tracking-tight">
+                  APPZYS
+                </span>
+                <span className="block text-[11px] font-semibold uppercase tracking-wider text-blue-200/80">
+                  Technologies Private Limited
+                </span>
+              </div>
             </div>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
-              Flutter Mobile Application Development &amp; AI Integration Studio. We build
-              cross-platform Android &amp; iOS apps, integrate AI workflows, maintain existing
-              Flutter codebases, and provide white-label Flutter capacity.
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-300">
+              Mobile Product Engineering &amp; AI Integration. We build cross-platform Flutter applications,
+              integrate third-party APIs and AI workflows, stabilize and maintain existing apps, and provide
+              dedicated Flutter engineering capacity for software agencies.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-xs text-blue-300">
               <ShieldCheck className="h-4 w-4 text-blue-400" />
@@ -30,51 +40,81 @@ export default function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wider text-white">Navigation</h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
-                <Link to="/" className="hover:text-white">
+                <Link to="/" className="hover:text-white transition">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services/mobile-app-development" className="hover:text-white">
-                  Mobile App Development
+                <Link to="/services/mobile-app-development" className="hover:text-white transition">
+                  Mobile Services
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="hover:text-white">
-                  Built by Appzys (Case Studies)
+                <Link to="/services/ai-ocr-app-development" className="hover:text-white transition">
+                  AI &amp; OCR Apps
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white">
-                  48-Hr Free Architecture Audit
+                <Link to="/case-studies" className="hover:text-white transition">
+                  Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/admin/login" className="text-blue-300/80 hover:text-white">
-                  Staff Admin Login
+                <Link to="/blog" className="hover:text-white transition">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white">Studio HQ</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white">Contact &amp; Studio HQ</h3>
             <ul className="mt-4 space-y-3 text-sm text-blue-100">
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-200" />
-                <span>Chennai / Kanchipuram, Tamil Nadu, India</span>
+              <li className="flex items-start gap-2.5">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-300" />
+                <span>Guindy, Chennai, India</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-blue-200" />
-                <span>hello@appzys.com</span>
+              <li className="flex items-center gap-2.5">
+                <Mail className="h-4 w-4 shrink-0 text-blue-300" />
+                <a href="mailto:support@appzys.com" className="hover:text-white hover:underline transition">
+                  support@appzys.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone className="h-4 w-4 shrink-0 text-blue-300" />
+                <a href="tel:+919025359351" className="hover:text-white hover:underline transition">
+                  +91 9025359351
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Globe className="h-4 w-4 shrink-0 text-blue-300" />
+                <a href="https://www.appzys.com" target="_blank" rel="noreferrer" className="hover:text-white hover:underline transition">
+                  www.appzys.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5 pt-1">
+                <Linkedin className="h-4 w-4 shrink-0 text-blue-300" />
+                <a
+                  href="https://linkedin.com/company/appzys"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-blue-300 hover:text-white hover:underline transition"
+                >
+                  linkedin.com/company/appzys
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/15 pt-6 text-xs text-blue-100/80 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Appzys Technologies Private Limited. All rights reserved.</p>
-          <p>Flutter &amp; Dart &bull; Provider &bull; Firebase &bull; Cloud Functions &bull; AI Integration</p>
+          <p>© {new Date().getFullYear()} APPZYS Technologies Private Limited. Guindy, Chennai, India.</p>
+          <p>Flutter &bull; Dart &bull; Firebase &bull; On-Device AI &bull; REST APIs</p>
         </div>
       </div>
     </footer>

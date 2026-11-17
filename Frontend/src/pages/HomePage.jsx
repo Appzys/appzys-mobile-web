@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -14,7 +14,6 @@ import {
   Sparkles,
   Star,
 } from 'lucide-react'
-import InteractivePhoneShowcase from '../components/InteractivePhoneShowcase'
 import TrustMarquee from '../components/TrustMarquee'
 import CaseStudyMiniPreview from '../components/CaseStudyMiniPreview'
 import Reveal from '../components/Reveal'
@@ -25,25 +24,79 @@ import FaqSection from '../components/FaqSection'
 import { api } from '../services/api'
 import { FALLBACK_CASE_STUDIES, SERVICES_LIST } from '../data/appData'
 
+// Animated Counter component that counts up from 0 to target value on scroll into view
+function CounterMetric({ target, suffix = '', decimals = 0, duration = 1800 }) {
+  const [count, setCount] = useState(0)
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const elementRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true)
+          let startTimestamp = null
+          const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1)
+            // Ease-out expo curve for smooth realistic counting
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress)
+            setCount(easeProgress * target)
+            if (progress < 1) {
+              window.requestAnimationFrame(step)
+            } else {
+              setCount(target)
+            }
+          }
+          window.requestAnimationFrame(step)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [target, duration, hasAnimated])
+
+  const formatted = decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toLocaleString()
+
+  return (
+    <span ref={elementRef} className="tabular-nums font-display font-extrabold">
+      {formatted}{suffix}
+    </span>
+  )
+}
+
 const TRUST_METRICS = [
   {
-    value: '500K+',
-    label: 'Copy Text On Screen Google Play Downloads',
+    target: 620,
+    suffix: 'K+',
+    decimals: 0,
+    label: 'Total app downloads (Google Play)',
     icon: Download,
   },
   {
-    value: '100K+',
-    label: 'AI Text Scanner Google Play Downloads',
-    icon: ScanText,
-  },
-  {
-    value: '4.6 / 5',
-    label: 'AI Scanner & Copy Text App Store Rating',
+    target: 14,
+    suffix: 'K+',
+    decimals: 0,
+    label: 'Total app ratings (US App Store)',
     icon: Star,
   },
   {
-    value: '4 Live Apps',
-    label: 'In-House AI, OCR & Audio Products',
+    target: 4.6,
+    suffix: ' / 5',
+    decimals: 1,
+    label: 'Average app rating (US App Store)',
+    icon: Star,
+  },
+  {
+    target: 8,
+    suffix: '+ Years',
+    decimals: 0,
+    label: 'Mobile development experience',
     icon: Smartphone,
   },
 ]
@@ -58,22 +111,21 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero Section: Full-Bleed Cinematic AI & Mobile Studio Hero Banner */}
-      <section className="relative overflow-hidden bg-[#0A192F] py-10 text-white sm:py-14 lg:py-16">
-        {/* Full-Bleed Cinematic Tech Background Image: Exactly fits 100% width and height without cropping */}
+      {/* Hero Section: Full-Width Cinematic Banner */}
+      <section className="relative overflow-hidden bg-[#0A192F] py-14 text-white sm:py-20 lg:py-24">
+        {/* Full-bleed background image spreading 100% width and height */}
         <div className="pointer-events-none absolute inset-0">
           <img
             src="/home-hero-banner.png"
             alt="Appzys AI Mobile Engineering Studio"
             className="h-full w-full object-fill"
           />
-          {/* Subtle balanced gradient overlay: text readable on left, robotic hand & holographic brain vibrant on right */}
-          <div className="absolute inset-0 bg-[#0A192F]/40 md:bg-gradient-to-r md:from-[#0A192F]/85 md:via-[#0A192F]/45 md:to-[#0A192F]/15" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.2),transparent_50%)]" />
+          {/* Subtle balanced gradient overlay: text readable on left, phone and glowing cards vibrant on right */}
+          <div className="absolute inset-0 bg-[#0A192F]/40 md:bg-gradient-to-r md:from-[#0A192F]/90 md:via-[#0A192F]/40 md:to-transparent" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-          <div className="lg:col-span-7">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl text-left">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/15 px-3.5 py-1.5 text-xs font-semibold text-blue-200">
               <Sparkles className="h-3.5 w-3.5 text-blue-300" />
               Flutter Mobile App Development &amp; AI Integration
@@ -123,10 +175,6 @@ export default function HomePage() {
               </span>
             </div>
           </div>
-
-          <div className="animate-float lg:col-span-5">
-            <InteractivePhoneShowcase />
-          </div>
         </div>
       </section>
 
@@ -148,7 +196,11 @@ export default function HomePage() {
                     </span>
                   </div>
                   <div className="mt-4 font-display text-2xl font-extrabold text-[#0A192F] transition-colors duration-300 group-hover:text-[#1D63ED]">
-                    {item.value}
+                    <CounterMetric
+                      target={item.target}
+                      suffix={item.suffix}
+                      decimals={item.decimals}
+                    />
                   </div>
                   <div className="mt-1.5 text-xs font-medium leading-relaxed text-slate-600">
                     {item.label}

@@ -3,8 +3,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import MobileAppServicePage from './pages/MobileAppServicePage'
+import AiOcrServicePage from './pages/AiOcrServicePage'
 import CaseStudiesPage from './pages/CaseStudiesPage'
 import CaseStudyDetailPage from './pages/CaseStudyDetailPage'
+import BlogHubPage from './pages/BlogHubPage'
+import BlogPostDetailPage from './pages/BlogPostDetailPage'
 import ContactPage from './pages/ContactPage'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/admin/ProtectedRoute'
@@ -13,6 +16,8 @@ import AdminLoginPage from './pages/admin/AdminLoginPage'
 import AdminDashboardPage from './pages/admin/AdminDashboardPage'
 import AdminLeadsPage from './pages/admin/AdminLeadsPage'
 import AdminEstimatesPage from './pages/admin/AdminEstimatesPage'
+import AdminBlogsPage from './pages/admin/AdminBlogsPage'
+import AdminCaseStudiesPage from './pages/admin/AdminCaseStudiesPage'
 
 // Layout wrapper for public consumer pages with public Navbar and Footer
 function PublicLayout({ children }) {
@@ -48,6 +53,14 @@ export default function App() {
             }
           />
           <Route
+            path="/services/ai-ocr-app-development"
+            element={
+              <PublicLayout>
+                <AiOcrServicePage />
+              </PublicLayout>
+            }
+          />
+          <Route
             path="/case-studies"
             element={
               <PublicLayout>
@@ -60,6 +73,22 @@ export default function App() {
             element={
               <PublicLayout>
                 <CaseStudyDetailPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <PublicLayout>
+                <BlogHubPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/blog/:slug"
+            element={
+              <PublicLayout>
+                <BlogPostDetailPage />
               </PublicLayout>
             }
           />
@@ -82,6 +111,8 @@ export default function App() {
               <Route path="dashboard" element={<AdminDashboardPage />} />
               <Route path="leads" element={<AdminLeadsPage />} />
               <Route path="estimates" element={<AdminEstimatesPage />} />
+              <Route path="blogs" element={<AdminBlogsPage />} />
+              <Route path="case-studies" element={<AdminCaseStudiesPage />} />
             </Route>
           </Route>
 

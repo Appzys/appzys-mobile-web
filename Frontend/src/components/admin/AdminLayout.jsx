@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
+  Briefcase,
   Calculator,
   ExternalLink,
+  FileText,
   Inbox,
   LayoutDashboard,
   LogOut,
@@ -58,6 +60,18 @@ export default function AdminLayout() {
       to: '/admin/estimates',
       label: 'Cost Estimates Scope',
       icon: Calculator,
+      badge: null,
+    },
+    {
+      to: '/admin/blogs',
+      label: 'Articles & SEO CMS',
+      icon: FileText,
+      badge: null,
+    },
+    {
+      to: '/admin/case-studies',
+      label: 'Case Studies CMS',
+      icon: Briefcase,
       badge: null,
     },
   ]
@@ -200,6 +214,10 @@ export default function AdminLayout() {
                   ? 'Client Leads & CRM'
                   : location.pathname.includes('estimates')
                   ? 'Cost Estimates'
+                  : location.pathname.includes('blogs')
+                  ? 'Articles & SEO CMS'
+                  : location.pathname.includes('case-studies')
+                  ? 'Case Studies CMS'
                   : 'Dashboard Overview'}
               </span>
             </div>

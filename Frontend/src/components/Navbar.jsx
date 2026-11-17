@@ -5,7 +5,9 @@ import { Menu, X, ArrowRight, Smartphone, Sparkles } from 'lucide-react'
 const navItems = [
   { label: 'Home', to: '/' },
   { label: 'Mobile Services', to: '/services/mobile-app-development' },
+  { label: 'AI & OCR Apps', to: '/services/ai-ocr-app-development' },
   { label: 'Case Studies', to: '/case-studies' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -17,33 +19,43 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#0A192F] via-[#2563EB] to-[#1D63ED] text-white shadow-sm">
-              <Smartphone className="h-5 w-5" />
+            {/* Exact Appzys Logo from Uploaded Image in crisp white rounded card */}
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white p-1 shadow-sm border border-slate-200 overflow-hidden">
+              <img
+                src="/appzys-logo.png"
+                alt="Appzys Logo"
+                className="h-full w-full object-contain"
+              />
             </div>
             <div>
-              <span className="font-display text-lg font-extrabold tracking-tight text-[#0A192F]">
-                Appzys
+              <span className="font-display text-lg font-black tracking-tight text-[#0A192F]">
+                APPZYS
               </span>
-              <span className="ml-1.5 hidden rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-blue-700 sm:inline-block">
-                AI &amp; Mobile Studio
+              <span className="ml-1.5 hidden rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 sm:inline-block border border-blue-200/50">
+                Mobile &amp; AI Studio
               </span>
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors ${
+                  `text-sm font-medium transition-colors flex items-center gap-1.5 ${
                     isActive
                       ? 'text-blue-600'
                       : 'text-slate-600 hover:text-[#0A192F]'
                   }`
                 }
               >
-                {item.label}
+                <span>{item.label}</span>
+                {item.badge && (
+                  <span className="rounded-full bg-blue-100 px-1.5 py-0.2 text-[10px] font-bold text-blue-700">
+                    {item.badge}
+                  </span>
+                )}
               </NavLink>
             ))}
           </nav>
@@ -90,6 +102,11 @@ export default function Navbar() {
                   }
                 >
                   {item.label}
+                  {item.badge && (
+                    <span className="rounded-full bg-blue-100 px-1.5 py-0.2 text-[10px] font-bold text-blue-700">
+                      {item.badge}
+                    </span>
+                  )}
                 </NavLink>
               ))}
               <Link
