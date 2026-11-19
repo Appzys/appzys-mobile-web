@@ -135,7 +135,7 @@ export default function CostCalculator() {
       setSavedEstimate(res.data)
     } catch (err) {
       setErrorMsg(
-        err.message || 'Estimate ready! Click below to request your free 48-Hr Audit.'
+        err.message || 'Estimate ready! Click below to contact us.'
       )
     } finally {
       setSaving(false)
@@ -483,7 +483,7 @@ export default function CostCalculator() {
 
               {savedEstimate && (
                 <div className="rounded-xl bg-blue-500/15 px-3 py-2 text-xs text-blue-300">
-                  Estimate #{savedEstimate.id} saved! Reference it in your 48-Hr Audit.
+                  Estimate #{savedEstimate.id} saved! Reference it when you contact us.
                 </div>
               )}
 
@@ -497,7 +497,7 @@ export default function CostCalculator() {
                 to={savedEstimate ? `/contact?estimateId=${savedEstimate.id}` : '/contact'}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:border-slate-500"
               >
-                Lock Scope &amp; Get 48-Hr Audit <ArrowRight className="h-4 w-4" />
+                Lock Scope &amp; Contact Us <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

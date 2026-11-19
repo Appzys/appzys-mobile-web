@@ -34,6 +34,7 @@ import {
   Zap,
 } from 'lucide-react'
 import TrustMarquee from '../components/TrustMarquee'
+import SeoHead from '../components/SeoHead'
 import {
   AI_CAPABILITIES,
   SERVICE_COMPARISON,
@@ -98,7 +99,7 @@ const SERVICE_TAGS = [
 const SIX_STEP_PROCESS = [
   {
     step: '01',
-    title: '48-Hour Technical Audit & Architecture Plan',
+    title: 'Technical Audit & Architecture Plan',
     duration: '2 - 3 Days',
     summary:
       'We evaluate your product goal, existing Flutter code (if any), third-party API feasibility, and deliver a detailed milestone roadmap with fixed scope and timeline.',
@@ -351,7 +352,7 @@ const TRUST_GUARANTEES = [
 const HIGH_INTENT_FAQS = [
   {
     q: 'How much does a production Flutter mobile app MVP cost and how long does it take?',
-    a: 'A focused production-ready Flutter MVP typically takes 4 to 6 weeks to develop, with costs ranging between $5,000 and $15,000 depending on features, backend complexity, and AI API integrations. We provide a transparent, fixed-scope estimate within 48 hours of our initial technical audit so you have zero surprise fees.',
+    a: 'A focused production-ready Flutter MVP typically takes 4 to 6 weeks to develop, with costs ranging between $5,000 and $15,000 depending on features, backend complexity, and AI API integrations. We provide a transparent, fixed-scope estimate upfront so you have zero surprise fees.',
   },
   {
     q: 'Who owns the intellectual property (IP) and source code after launch?',
@@ -411,6 +412,17 @@ export default function MobileAppServicePage() {
 
   return (
     <div>
+      <SeoHead
+        title="Flutter Mobile App Development & AI Integration Services | Appzys"
+        description="Explore Appzys's 4 core Flutter services: Mobile App Development, AI/API Integration, Codebase Enhancement, and Dedicated Flutter Engineers."
+        canonicalPath="/services/mobile-app-development"
+        keywords="Flutter mobile app development, dedicated Flutter developers, cross-platform iOS Android, mobile AI integration, Appzys services"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Mobile Services', item: '/services/mobile-app-development' },
+        ]}
+      />
+
       {/* Hero: Case Studies Style Rounded 3xl Floating Banner */}
       <div className="py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -418,11 +430,11 @@ export default function MobileAppServicePage() {
             {/* Right-side 4-Services Isometric 3D Graphic */}
             <div className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[60%] lg:w-[50%]">
               <img
-                src="/mobile-services-banner.png"
+                src="/mobile-services-banner.jpg"
                 alt="Appzys 4 Flutter & AI Mobile Services"
-                className="h-full w-full object-cover object-right"
+                className="h-full w-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent sm:via-[#0A192F]/55 md:via-[#0A192F]/25" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/60 to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-2xl">
@@ -444,16 +456,15 @@ export default function MobileAppServicePage() {
                   to="/contact?service=01.%20Mobile%20App%20Development%20(Flutter)"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1D63ED] px-5 py-3 text-sm font-bold text-white shadow-md shadow-blue-500/25 transition hover:bg-[#1652CA]"
                 >
-                  Book Free 48-Hr Flutter Audit
+                  Contact Us
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href="/#estimator"
+                <Link
+                  to="/case-studies"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-400/50"
                 >
-                  <Calculator className="h-4 w-4" />
-                  Estimate Project Cost
-                </a>
+                  Explore Live Apps
+                </Link>
               </div>
 
               {/* Compact 4-Metric Strip with Border Top */}
@@ -557,7 +568,7 @@ export default function MobileAppServicePage() {
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity group-hover:opacity-100" />
                     <div className="flex items-start justify-between gap-4">
                       <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#1D63ED] transition group-hover:bg-[#1D63ED] group-hover:text-white">
-                        <Icon className="h-6 w-6 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                        <Icon className="h-6 w-6" />
                       </span>
                       <span className="select-none font-display text-5xl font-extrabold leading-none text-slate-100">
                         {item.id}
@@ -1119,14 +1130,14 @@ export default function MobileAppServicePage() {
                 Ready to Build, AI-Enable, or Scale Your Flutter App?
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-relaxed text-blue-100 sm:text-base">
-                Share your product goal, existing Flutter codebase, or agency capacity need. We&apos;ll deliver a scoped architecture plan and effort estimate within 48 hours.
+                Share your product goal, existing Flutter codebase, or agency capacity need. We&apos;ll deliver a scoped architecture plan and effort estimate promptly.
               </p>
             </div>
             <Link
               to="/contact?service=01.%20Mobile%20App%20Development%20(Flutter)"
               className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-7 py-4 text-sm font-bold text-[#0A192F] transition hover:bg-blue-50 shadow-lg"
             >
-              Request Free 48-Hr Audit
+              Contact Us
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

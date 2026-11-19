@@ -9,6 +9,8 @@ import CaseStudyDetailPage from './pages/CaseStudyDetailPage'
 import BlogHubPage from './pages/BlogHubPage'
 import BlogPostDetailPage from './pages/BlogPostDetailPage'
 import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
+import LegacyAppPolicyPage from './pages/LegacyAppPolicyPage'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AdminLayout from './components/admin/AdminLayout'
@@ -76,6 +78,7 @@ export default function App() {
               </PublicLayout>
             }
           />
+          {/* 
           <Route
             path="/blog"
             element={
@@ -92,11 +95,70 @@ export default function App() {
               </PublicLayout>
             }
           />
+          */}
           <Route
             path="/contact"
             element={
               <PublicLayout>
                 <ContactPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <PublicLayout>
+                <AboutPage />
+              </PublicLayout>
+            }
+          />
+
+          {/* LEGACY APP STORE & PLAY STORE PRESERVATION ROUTES (Zero Downtime) */}
+          <Route
+            path="/ios/:app/:doc"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/ios/textscanner/privacypolicy"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/ios/textscanner/termsofuse"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/ios/copytext/privacypolicy"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/ios/handocr/privacypolicy"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
+              </PublicLayout>
+            }
+          />
+          <Route
+            path="/ios/aichat/privacypolicy"
+            element={
+              <PublicLayout>
+                <LegacyAppPolicyPage />
               </PublicLayout>
             }
           />

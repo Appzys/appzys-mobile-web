@@ -4,51 +4,43 @@ import { ArrowRight, CheckCircle2, Layers } from 'lucide-react'
 const STEPS = [
   {
     num: '01',
-    title: 'Initial Analysis',
-    duration: 'Days 1–2',
-    desc: 'It starts with understanding and analysis of your requirements. We assess technical feasibility across Flutter, Firebase, and AI integrations to provide viable solutions and a clear roadmap.',
-    deliverable: 'Flutter Architecture Flow (Provider + Firebase + Cloud Functions) & Fixed Sprint Roadmap',
-    gate: 'Zero ambiguity on scope & budget before kickoff',
+    title: 'Discover',
+    duration: 'Stage 01',
+    desc: 'Understand requirements, existing systems and delivery expectations.',
+    deliverable: 'Requirements analysis, existing systems review and scope baseline.',
+    gate: 'Clear mutual understanding of project goals and constraints',
   },
   {
     num: '02',
-    title: 'Designing',
-    duration: 'Week 1–2',
-    desc: 'Our team plans every screen, navigation flow, and clickable wireframe/blueprint so you can validate the complete mobile user journey before production coding starts.',
-    deliverable: 'Interactive Screen Flows, Figma UI Handoff & Material 3 / Cupertino Specs',
-    gate: '100% UI/UX workflow sign-off from your team',
+    title: 'Plan',
+    duration: 'Stage 02',
+    desc: 'Agree on implementation scope, features and milestones.',
+    deliverable: 'Feature roadmap, technical architecture and milestone plan.',
+    gate: 'Agreed scope, delivery milestones and change handling',
   },
   {
     num: '03',
-    title: 'Development',
-    duration: 'Weekly Drops',
-    desc: 'Once the design is finalized, we begin end-to-end Flutter & Dart development—implementing Provider state management, REST APIs, Firebase Cloud Functions, and AI workflows with weekly builds.',
-    deliverable: 'Weekly TestFlight (iOS) & Play Internal (Android) Builds + Direct Git Commits',
-    gate: 'Live Friday build walkthrough & backlog review',
+    title: 'Build',
+    duration: 'Stage 03',
+    desc: 'Develop agreed functionality with regular progress updates.',
+    deliverable: 'End-to-end Flutter development with regular builds and progress updates.',
+    gate: 'Regular progress reviews based on engagement needs',
   },
   {
     num: '04',
-    title: 'Testing',
-    duration: 'Pre-Release',
-    desc: 'To ensure reliable operation, security, and bug-free functionality, we carry out functional, widget, and integration testing along with user acceptance testing (UAT) across real devices.',
-    deliverable: 'Scoped Functional & Widget QA Report + Device Compatibility Verification',
-    gate: 'Zero blocker defects across target Android & iOS versions',
+    title: 'Validate',
+    duration: 'Stage 04',
+    desc: 'Test functionality, review issues and prepare builds.',
+    deliverable: 'Functional testing, issue resolution, regression checks and candidate builds.',
+    gate: 'Functional validation and issue resolution before release',
   },
   {
     num: '05',
-    title: 'Deployment',
-    duration: 'Store Launch',
-    desc: 'We prepare production builds and guide your mobile app through Google Play Console and Apple App Store review, complete with full source-code and IP handover.',
-    deliverable: 'Production APK/AAB & IPA Builds + Guided Store Release & 100% IP Handover',
-    gate: 'Live store release & analytics telemetry verified',
-  },
-  {
-    num: '06',
-    title: 'Post Deployment Maintenance',
-    duration: 'Ongoing Support',
-    desc: 'We provide end-to-end post-deployment support—covering Flutter SDK & dependency upgrades, bug fixes, new feature enhancements, and monthly maintenance retainers as your product grows.',
-    deliverable: 'Flutter Dependency Upgrades, Bug Fixes, Feature Sprints & Monthly Status Reports',
-    gate: 'Continuous stability & long-term product evolution',
+    title: 'Launch & Handover',
+    duration: 'Stage 05',
+    desc: 'Prepare Android/iOS release and complete agreed technical handover.',
+    deliverable: 'Production store submission support and agreed technical handover.',
+    gate: 'Release verification and agreed project handover',
   },
 ]
 
@@ -61,26 +53,19 @@ export default function DevelopmentProcess() {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-24">
               <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                Transparent Delivery Process
+                Our Delivery Approach
               </span>
               <h2 className="mt-2 font-display text-3xl font-extrabold leading-tight text-black sm:text-4xl">
-                Our Mobile Application Development Process
+                A Clear Process From Requirements to Release
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-black sm:text-base">
-                As a focused Flutter &amp; AI engineering studio, we follow a streamlined{' '}
-                <Link
-                  to="/services/mobile-app-development"
-                  className="font-semibold text-[#1D63ED] underline decoration-blue-200 underline-offset-4 hover:text-[#1652CA]"
-                >
-                  mobile app development workflow
-                </Link>{' '}
-                tailored to your product requirements to achieve reliable, store-ready outcomes.
+                A structured five-stage delivery workflow designed to maintain transparency, code quality, and on-time release.
               </p>
               <Link
                 to="/contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1D63ED] px-6 py-3 text-sm font-bold text-white shadow-md shadow-blue-500/20 transition hover:bg-[#1652CA]"
               >
-                Talk To Our Flutter Experts
+                Discuss Your Project
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

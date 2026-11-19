@@ -84,7 +84,7 @@ export default function FaqSection() {
             to="/contact"
             className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700"
           >
-            Have a specific architecture question? Book a Free 48-Hr Audit
+            Have a specific architecture question? Contact Us
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

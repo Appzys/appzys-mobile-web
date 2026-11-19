@@ -138,13 +138,13 @@ export default function TechStackTabs() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-            Proven Mobile Stack
+            Engineering Capabilities
           </span>
           <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-3xl">
-            Mobile Technologies We Ship With Daily
+            Built with Practical Mobile Engineering Experience
           </h2>
           <p className="mt-2 text-sm text-black sm:text-base">
-            Hover or tap any technology node to inspect how APPZYS engineers cross-platform Flutter and AI mobile products.
+            Our primary development stack includes Flutter, Dart, Firebase and REST API integration, alongside native Android and iOS capabilities.
           </p>
         </div>
 

@@ -17,10 +17,11 @@ import {
 import TrustMarquee from '../components/TrustMarquee'
 import CaseStudyMiniPreview from '../components/CaseStudyMiniPreview'
 import Reveal from '../components/Reveal'
-import CostCalculator from '../components/CostCalculator'
 import TechStackTabs from '../components/TechStackTabs'
 import DevelopmentProcess from '../components/DevelopmentProcess'
+import WhyChooseUs from '../components/WhyChooseUs'
 import FaqSection from '../components/FaqSection'
+import SeoHead from '../components/SeoHead'
 import { api } from '../services/api'
 import { FALLBACK_CASE_STUDIES, SERVICES_LIST } from '../data/appData'
 
@@ -75,21 +76,21 @@ const TRUST_METRICS = [
     target: 620,
     suffix: 'K+',
     decimals: 0,
-    label: 'Total app downloads (Google Play)',
+    label: 'Reported Google Play downloads',
     icon: Download,
   },
   {
     target: 14,
     suffix: 'K+',
     decimals: 0,
-    label: 'Total app ratings (US App Store)',
+    label: 'Reported US App Store ratings',
     icon: Star,
   },
   {
     target: 4.6,
     suffix: ' / 5',
     decimals: 1,
-    label: 'Average app rating (US App Store)',
+    label: 'Referenced US App Store product rating',
     icon: Star,
   },
   {
@@ -111,67 +112,78 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero Section: Full-Width Cinematic Banner */}
-      <section className="relative overflow-hidden bg-[#0A192F] py-14 text-white sm:py-20 lg:py-24">
-        {/* Full-bleed background image spreading 100% width and height */}
-        <div className="pointer-events-none absolute inset-0">
-          <img
-            src="/home-hero-banner.png"
-            alt="Appzys AI Mobile Engineering Studio"
-            className="h-full w-full object-fill"
-          />
-          {/* Subtle balanced gradient overlay: text readable on left, phone and glowing cards vibrant on right */}
-          <div className="absolute inset-0 bg-[#0A192F]/40 md:bg-gradient-to-r md:from-[#0A192F]/90 md:via-[#0A192F]/40 md:to-transparent" />
+      <SeoHead
+        title="Appzys | Flutter Mobile App Development & Engineering Support"
+        description="Engineering mobile products for businesses and growing teams. We build Flutter applications for Android and iOS, connect existing business systems, and support production apps."
+        canonicalPath="/"
+        keywords="Flutter mobile app development, Flutter engineering support, hire Flutter developers, mobile app development company India, Android iOS apps"
+      />
+
+      {/* Hero Section: OrangeMantra-Style Full Bleed Cinematic Banner */}
+      <section className="relative flex min-h-[calc(100vh-68px)] w-full items-center overflow-hidden bg-[#000E26] py-12 text-white sm:py-16">
+        {/* Full-bleed background graphics canvas */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {/* Right-anchored image matching container height: phone is 100% visible from top to bottom */}
+          <div className="absolute inset-y-0 right-0 flex h-full w-full justify-end">
+            <img
+              src="/home-hero-banner.jpg"
+              alt="Appzys 3D Flutter Mobile Solutions Showcase"
+              className="h-full w-auto max-w-none object-contain object-right"
+            />
+          </div>
+
+          {/* Seamless gradient blend: ensures pristine text readability on left while blending phone naturally */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#000E26] via-[#000E26]/90 to-transparent lg:w-[58%]" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#000E26] to-transparent" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl text-left">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl text-left lg:max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/15 px-3.5 py-1.5 text-xs font-semibold text-blue-200">
               <Sparkles className="h-3.5 w-3.5 text-blue-300" />
-              Flutter Mobile App Development &amp; AI Integration
+              Flutter Mobile App Development &amp; Engineering Support
             </div>
 
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]">
-              Flutter Mobile &amp; AI Apps Built to Scale to{' '}
+            <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.14] tracking-tight text-white sm:text-4xl lg:text-[2.85rem] xl:text-[3.25rem]">
+              Flutter Mobile App Development Services for{' '}
               <span className="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-300 bg-clip-text text-transparent">
-                Real Store Users
+                Growing Teams.
               </span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-              APPZYS builds cross-platform Android and iOS mobile apps using Flutter &amp; Dart,
-              Provider state management, Firebase, and third-party AI APIs&mdash;backed by real
-              production experience in AI transcription, OCR scanning, PDF chat, and study apps.
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
+              We build Flutter applications for Android and iOS, connect existing business systems to
+              mobile experiences, and provide ongoing engineering support for applications already in production.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1D63ED] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-[#1652CA]"
               >
-                Get Free 48-Hr App Architecture Audit
+                Discuss Your Project
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/case-studies"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-6 py-3.5 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-blue-400/50"
               >
-                Explore Our Live Apps
+                View Our Work
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300">
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300">
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-blue-400" />
-                Zero Junior Handoffs
+                Regular Builds &amp; Updates
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-blue-400" />
-                Weekly TestFlight / Play Builds
+                Agreed Delivery Milestones
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-blue-400" />
-                100% Client IP Ownership
+                Verified Functional Testing
               </span>
             </div>
           </div>
@@ -192,7 +204,7 @@ export default function HomePage() {
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="flex items-start">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 ring-1 ring-blue-100 transition-colors duration-300 group-hover:bg-[#1D63ED] group-hover:text-white group-hover:ring-[#1D63ED]">
-                      <Icon className="h-5 w-5 transition-transform duration-500 ease-out group-hover:rotate-[360deg]" />
+                      <Icon className="h-5 w-5" />
                     </span>
                   </div>
                   <div className="mt-4 font-display text-2xl font-extrabold text-[#0A192F] transition-colors duration-300 group-hover:text-[#1D63ED]">
@@ -218,15 +230,13 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-24">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#1D63ED]">
-                4 Core Flutter &amp; AI Services
+                Focused Mobile Engineering
               </span>
               <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-black sm:text-4xl">
-                Everything You Need in Flutter Mobile Engineering
+                Our Core Services
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-black sm:text-base">
-                Whether you need a new Android &amp; iOS Flutter MVP, AI feature integration,
-                ongoing maintenance for an existing Flutter app, or dedicated Flutter capacity for
-                your agency team&mdash;APPZYS has a focused service model.
+                Focused mobile engineering services for businesses and software teams.
               </p>
 
               <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
@@ -245,12 +255,12 @@ export default function HomePage() {
                 >
                   Explore Mobile Pillar Page <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href="#estimator"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-400"
                 >
-                  Estimate Cost
-                </a>
+                  Discuss Your Project
+                </Link>
               </div>
             </div>
           </div>
@@ -261,7 +271,7 @@ export default function HomePage() {
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-lg">
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600 shadow-xs ring-1 ring-slate-200/80 transition group-hover:bg-[#1D63ED] group-hover:text-white [&>svg]:transition-transform [&>svg]:duration-500 [&>svg]:ease-out group-hover:[&>svg]:rotate-[360deg]">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600 shadow-xs ring-1 ring-slate-200/80 transition group-hover:bg-[#1D63ED] group-hover:text-white">
                       {index % 3 === 0 ? (
                         <Smartphone className="h-5 w-5" />
                       ) : index % 3 === 1 ? (
@@ -293,15 +303,14 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                Product Portfolio / In-House Case Studies
+                Selected In-House Products
               </span>
               <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-4xl">
-                Built by Us. Used in the Real World.
+                Products we have built. Problems we have solved.
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-black sm:text-base">
-                APPZYS Technologies builds and operates its own Android &amp; iOS mobile
-                applications&mdash;giving us firsthand experience across product engineering, AI
-                integration, store publishing, and continuous improvement.
+                Our experience comes from developing, publishing and operating mobile applications
+                for OCR, document processing, transcription and AI-powered productivity.
               </p>
             </div>
             <div className="flex items-center gap-2.5 self-start md:self-auto">
@@ -325,7 +334,7 @@ export default function HomePage() {
                 to="/case-studies"
                 className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1D63ED] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:bg-[#1652CA]"
               >
-                Read Full Case Studies
+                View Our Applications
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -473,10 +482,80 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interactive Cost Estimator, Tech Stack, Process & FAQs */}
-      <CostCalculator />
+      {/* Section 05: Who We Work With (PDF Page 10) */}
+      <section className="border-t border-slate-200 bg-[#FAFBFD] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              Target Partnerships
+            </span>
+            <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-4xl">
+              Who We Work With
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              Whether you are a founder building a product from scratch or an agency needing dedicated Flutter engineering capacity.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {/* Card 1: For Businesses & Startups */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-xs transition duration-300 hover:border-blue-300 hover:shadow-xl sm:p-10">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-[#1D63ED]">
+                  Startups &amp; Product Owners
+                </span>
+                <h3 className="mt-4 font-display text-2xl font-black text-[#0A192F]">
+                  For Businesses &amp; Startups
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  Have a mobile product to launch or an existing platform that needs an Android and iOS application? We help turn agreed requirements into a functional mobile application, from implementation through testing and release preparation.
+                </p>
+              </div>
+              <div className="mt-8 border-t border-slate-100 pt-6">
+                <Link
+                  to="/contact?service=01%20%E2%80%94%20Full%20MVP%20Mobile%20App%20Development"
+                  className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-xs font-bold text-[#0A192F] shadow-xs transition-all duration-300 group-hover:border-[#1D63ED] group-hover:bg-[#1D63ED] group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-500/20"
+                >
+                  <span>Discuss a Mobile App Project</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: For Software Agencies & Product Teams */}
+            <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-xs transition duration-300 hover:border-blue-300 hover:shadow-xl sm:p-10">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-blue-400 to-[#1D63ED] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-[#1D63ED]">
+                  Agencies &amp; Engineering Leads
+                </span>
+                <h3 className="mt-4 font-display text-2xl font-black text-[#0A192F]">
+                  For Software Agencies &amp; Product Teams
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  Need additional Flutter development capacity for an existing project or upcoming mobile requirement? We can collaborate with your team, support specific modules and integrations, or help with ongoing Flutter development.
+                </p>
+              </div>
+              <div className="mt-8 border-t border-slate-100 pt-6">
+                <Link
+                  to="/contact?service=04%20%E2%80%94%20Dedicated%20Flutter%20Development"
+                  className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-xs font-bold text-[#0A192F] shadow-xs transition-all duration-300 group-hover:border-[#1D63ED] group-hover:bg-[#1D63ED] group-hover:text-white group-hover:shadow-md group-hover:shadow-blue-500/20"
+                >
+                  <span>Explore a Development Partnership</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Engineering Capabilities, Delivery Process, Why Choose Us & FAQs */}
       <TechStackTabs />
       <DevelopmentProcess />
+      <WhyChooseUs />
+
       <FaqSection />
 
       {/* Bottom High-Contrast Conversion Banner */}
@@ -489,21 +568,21 @@ export default function HomePage() {
                 <div className="max-w-2xl">
                   <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-blue-300">
                     <ShieldCheck className="h-4 w-4" />
-                    Direct Senior Engineering Team &bull; Tamil Nadu, India
+                    APPZYS Technologies &bull; Chennai, India
                   </div>
                   <h2 className="mt-2 font-display text-2xl font-extrabold sm:text-3xl">
-                    Ready to Turn Your Mobile App Idea Into a Store-Ready Product?
+                    Have a mobile product to build or a team to extend?
                   </h2>
                   <p className="mt-2 text-sm text-slate-300 sm:text-base">
-                    Send your idea and receive a free architecture flow, recommended tech stack, and
-                    realistic launch timeline within 48 hours.
+                    Whether you need a new Flutter application, integration with an existing backend,
+                    improvements to an existing product or additional development capacity, let us discuss your requirements.
                   </p>
                 </div>
                 <Link
                   to="/contact"
                   className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1D63ED] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-[#1652CA]"
                 >
-                  Request Free 48-Hr Audit
+                  Discuss Your Project
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

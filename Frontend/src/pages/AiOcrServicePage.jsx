@@ -22,6 +22,7 @@ import {
 } from 'lucide-react'
 import StackDecisionHelper from '../components/StackDecisionHelper'
 import CaseStudyMiniPreview from '../components/CaseStudyMiniPreview'
+import SeoHead from '../components/SeoHead'
 
 const OCR_CAPABILITIES = [
   {
@@ -86,6 +87,17 @@ export default function AiOcrServicePage() {
 
   return (
     <div className="py-12 sm:py-16">
+      <SeoHead
+        title="On-Device AI & Mobile OCR App Development Studio | Appzys"
+        description="Low-latency on-device machine learning, Google ML Kit, Apple Vision, and 100+ language OCR for iOS and Android mobile apps."
+        canonicalPath="/services/ai-ocr-app-development"
+        keywords="on-device OCR app development, mobile ML Kit, offline image to text app, iOS Vision framework, Android handwriting recognition"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'AI & OCR Apps', item: '/services/ai-ocr-app-development' },
+        ]}
+      />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         
         {/* 1. HERO SECTION: Full-Bleed High-Tech Navy Card */}
@@ -139,7 +151,7 @@ export default function AiOcrServicePage() {
                 to="/contact?service=02.+AI+Integration+%26+Applications"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1D63ED] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-[#1652CA]"
               >
-                <span>Request Free 48-Hr Architecture Audit</span>
+                <span>Contact Us</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
@@ -306,14 +318,14 @@ export default function AiOcrServicePage() {
               Have an AI, OCR, or Document Processing App Idea?
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-300">
-              Receive a custom mobile architecture blueprint, model feasibility assessment, and fixed sprint estimate in 48 hours.
+              Receive a custom mobile architecture blueprint, model feasibility assessment, and fixed sprint estimate.
             </p>
           </div>
           <Link
             to="/contact?service=02.+AI+Integration+%26+Applications"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1D63ED] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-[#1652CA]"
           >
-            Request Free 48-Hr Audit <ArrowRight className="h-4 w-4" />
+            Contact Us <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 

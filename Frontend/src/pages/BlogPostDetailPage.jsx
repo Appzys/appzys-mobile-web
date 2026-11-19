@@ -17,6 +17,7 @@ import {
   User,
 } from 'lucide-react'
 import { api } from '../services/api'
+import SeoHead from '../components/SeoHead'
 
 export default function BlogPostDetailPage() {
   const { slug } = useParams()
@@ -350,6 +351,19 @@ export default function BlogPostDetailPage() {
 
   return (
     <div className="bg-[#FAFBFD] pb-24 text-slate-900">
+      <SeoHead
+        title={`${blog.title} | Appzys Engineering Blog`}
+        description={blog.excerpt || blog.title}
+        canonicalPath={`/blog/${blog.slug}`}
+        keywords={blog.tagsCsv || 'Flutter mobile engineering, AI app development'}
+        ogType="article"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Blog', item: '/blog' },
+          { name: blog.title, item: `/blog/${blog.slug}` },
+        ]}
+      />
+
       {/* TOP BREADCRUMB & HEADER (Exact Orange Mantra Layout) */}
       <section className="border-b border-slate-200/80 bg-white py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -459,23 +473,23 @@ export default function BlogPostDetailPage() {
                 </nav>
               </div>
 
-              {/* QUICK AUDIT CTA WIDGET IN SIDEBAR */}
+              {/* QUICK CONTACT CTA WIDGET IN SIDEBAR */}
               <div className="rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50/60 p-6 text-slate-900 shadow-xs">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#1D63ED]">
                   <Sparkles className="h-4 w-4" />
-                  <span>Free Senior Engineering Audit</span>
+                  <span>Senior Engineering Consultation</span>
                 </div>
                 <h4 className="mt-2 font-display text-sm font-extrabold text-[#0A192F]">
                   Need a mobile app built or reviewed?
                 </h4>
                 <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                  Get a complete architecture, tech stack &amp; budget breakdown in 48 hours.
+                  Get a complete architecture, tech stack &amp; budget breakdown.
                 </p>
                 <Link
                   to="/contact"
                   className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1D63ED] px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-blue-500/20 hover:bg-blue-600"
                 >
-                  <span>Request 48-Hr Audit</span>
+                  <span>Contact Us</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>

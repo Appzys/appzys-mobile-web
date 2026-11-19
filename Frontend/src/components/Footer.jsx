@@ -26,9 +26,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-300">
-              Mobile Product Engineering &amp; AI Integration. We build cross-platform Flutter applications,
-              integrate third-party APIs and AI workflows, stabilize and maintain existing apps, and provide
-              dedicated Flutter engineering capacity for software agencies.
+              APPZYS Technologies is a Chennai-based mobile engineering company specializing in Flutter, Android and iOS engineering. Alongside developing its own mobile products, APPZYS provides production engineering support to businesses, software agencies and growing product teams.
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-xs text-blue-300">
               <ShieldCheck className="h-4 w-4 text-blue-400" />
@@ -59,9 +57,16 @@ export default function Footer() {
                   Case Studies
                 </Link>
               </li>
+              {/*
               <li>
                 <Link to="/blog" className="hover:text-white transition">
                   Blog
+                </Link>
+              </li>
+              */}
+              <li>
+                <Link to="/about" className="hover:text-white transition">
+                  About
                 </Link>
               </li>
               <li>

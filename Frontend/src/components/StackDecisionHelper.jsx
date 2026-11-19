@@ -297,7 +297,7 @@ export default function StackDecisionHelper() {
                 )}`}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1D63ED] py-3 text-xs font-bold text-white shadow-md shadow-blue-500/20 transition hover:bg-[#1652CA]"
               >
-                <span>Request 48-Hr Audit For This Stack</span>
+                <span>Contact Us For This Stack</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

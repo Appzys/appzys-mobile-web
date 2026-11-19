@@ -11,12 +11,13 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { api } from '../services/api'
+import SeoHead from '../components/SeoHead'
 
 const SERVICE_OPTIONS = [
-  '01. Mobile App Development (Flutter)',
-  '02. AI Integration & Applications',
-  '03. App Enhancement & Maintenance',
-  '04. Dedicated Flutter Development / White-Label',
+  '01 — Full MVP Mobile App Development',
+  '02 — SaaS & Backend to Mobile App Integration',
+  '03 — Mobile App Maintenance & Enhancement',
+  '04 — Dedicated Flutter Development',
 ]
 
 const BUDGET_OPTIONS = [
@@ -119,7 +120,7 @@ export default function ContactPage() {
         type: 'success',
         text:
           res.message ||
-          'Thank you! Your request has been saved. Our senior engineers will reply within 48 hours.',
+          'Thank you! Your request has been saved. Our senior engineers will reply shortly.',
       })
       setForm({
         name: '',
@@ -145,24 +146,35 @@ export default function ContactPage() {
 
   return (
     <div className="py-14 sm:py-18">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+      <SeoHead
+        title="Contact Us & Book Mobile Architecture Consultation | Appzys"
+        description="Get in touch with Appzys senior mobile engineering team. Receive technical feasibility assessment, milestone roadmap, and sprint estimates."
+        canonicalPath="/contact"
+        keywords="contact Appzys, hire mobile app developers India, Flutter project consultation, Appzys Chennai"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Contact', item: '/contact' },
+        ]}
+      />
+
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:px-8 lg:grid-cols-12">
         {/* Left Pitch & Audit Deliverable Info */}
         <div className="lg:col-span-5">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
             <Sparkles className="h-3.5 w-3.5" />
-            Free 48-Hr Architecture Audit
+            Contact &amp; Architecture Consultation
           </span>
           <h1 className="mt-4 font-display text-3xl font-extrabold text-[#0A192F]">
-            Share Your App Idea With Our Senior Engineers
+            Have a mobile product to build or a team to extend?
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            No pushy sales reps. You speak directly with the engineers who build and ship mobile
-            apps to Google Play and the Apple App Store.
+            Whether you need a new Flutter application, integration with an existing backend, improvements
+            to an existing product or additional development capacity, let us discuss your requirements.
           </p>
 
           <div className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
             <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              What You Receive in 48 Hours
+              What You Receive From Our Engineers
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
@@ -385,7 +397,7 @@ export default function ContactPage() {
               className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 disabled:opacity-60"
             >
               <Send className="h-4 w-4" />
-              {submitting ? 'Submitting Request...' : 'Request My Free 48-Hr Audit'}
+              {submitting ? 'Submitting Request...' : 'Send Project Inquiry'}
             </button>
           </form>
         </div>

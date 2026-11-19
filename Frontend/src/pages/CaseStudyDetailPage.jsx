@@ -11,6 +11,7 @@ import {
   Star,
 } from 'lucide-react'
 import { api } from '../services/api'
+import SeoHead from '../components/SeoHead'
 import { FALLBACK_CASE_STUDIES } from '../data/appData'
 
 export default function CaseStudyDetailPage() {
@@ -53,6 +54,18 @@ export default function CaseStudyDetailPage() {
 
   return (
     <div className="py-14 sm:py-18">
+      <SeoHead
+        title={`${study.appName} Case Study (${study.installs}) | Appzys`}
+        description={study.summary || study.challenge}
+        canonicalPath={`/case-studies/${study.slug}`}
+        keywords={`${study.appName}, mobile case study, ${study.techStack ? study.techStack.join(', ') : 'Flutter'}, Appzys`}
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Case Studies', item: '/case-studies' },
+          { name: study.appName, item: `/case-studies/${study.slug}` },
+        ]}
+      />
+
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <Link
           to="/case-studies"
@@ -194,7 +207,7 @@ export default function CaseStudyDetailPage() {
                 Planning a mobile or AI app like {study.appName}?
               </div>
               <div className="text-xs text-slate-600">
-                Receive a custom mobile architecture blueprint and timeline in 48 hours.
+                Receive a custom mobile architecture blueprint and timeline.
               </div>
             </div>
             <Link

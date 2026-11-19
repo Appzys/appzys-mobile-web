@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, BarChart3, Cpu, ShieldCheck, Smartphone, Star } from 'lucide-react'
 import CaseStudyMiniPreview from '../components/CaseStudyMiniPreview'
+import SeoHead from '../components/SeoHead'
 import { EMERGING_PRODUCTS, FALLBACK_CASE_STUDIES } from '../data/appData'
 
 export default function CaseStudiesPage() {
@@ -20,6 +21,17 @@ export default function CaseStudiesPage() {
 
   return (
     <div className="py-14 sm:py-18">
+      <SeoHead
+        title="Production Mobile & AI Case Studies (~1M+ Installs) | Appzys"
+        description="Real production case studies of Appzys mobile apps: Copy Text On Screen, AI Text Scanner, Handwriting OCR, and Voice Transcript apps."
+        canonicalPath="/case-studies"
+        keywords="mobile app case studies, Flutter portfolio India, OCR app downloads, production AI apps"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Case Studies', item: '/case-studies' },
+        ]}
+      />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header & Portfolio Proof Banner */}
         <div className="relative overflow-hidden rounded-3xl bg-[#0A192F] p-8 text-white shadow-xl sm:p-10">
@@ -239,7 +251,7 @@ export default function CaseStudiesPage() {
             to="/contact"
             className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1D63ED] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1652CA]"
           >
-            Request Free 48-Hr Audit <ArrowRight className="h-4 w-4" />
+            Contact Us <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ const AUTH_TOKEN_KEY = 'appzys_admin_token'
 const AUTH_USER_KEY = 'appzys_admin_user'
 const LEADS_CACHE_KEY = 'appzys_leads_cache'
 const ESTIMATES_CACHE_KEY = 'appzys_estimates_cache'
-const BLOGS_CACHE_KEY = 'appzys_blogs_cache_v3'
+const BLOGS_CACHE_KEY = 'appzys_blogs_cache_v4'
 const CASE_STUDIES_CACHE_KEY = 'appzys_admin_case_studies_cache'
 
 // Initial seed leads for frontend demo / fallback
@@ -17,7 +17,7 @@ const INITIAL_SEED_LEADS = [
     company: 'MedTech Innovate',
     serviceType: '02. AI Integration & Applications',
     budgetRange: '$15,000 - $35,000',
-    message: 'Looking to build a Flutter medical assistant app with on-device document OCR and patient report summarization. Need 48-hr feasibility assessment.',
+    message: 'Looking to build a Flutter medical assistant app with on-device document OCR and patient report summarization. Need feasibility assessment.',
     sourcePage: '/contact',
     status: 'NEW',
     internalNotes: 'Qualified B2B inquiry. Scheduled architecture discovery call for Wednesday 11am.',
@@ -179,7 +179,7 @@ By adopting Flutter & Dart, our studio compiles directly to native ARM64 machine
 
 Building a production mobile app in India in 2026 costs between $3,500 and $32,000 depending on complexity. The key is working with a studio that offers full IP ownership, bi-weekly TestFlight delivery, and a zero-rejection App Store guarantee — not just a cheap quote.
 
-Appzys delivers all three. Request a free 48-hour architecture audit to get your exact timeline and budget.
+Appzys delivers all three. Contact us today to get your exact timeline and budget.
 `,
   },
   {
@@ -252,7 +252,7 @@ Since every OCR scan runs entirely on-device:
 
 On-device OCR with Flutter and Google ML Kit is not just faster — it eliminates cloud costs entirely and makes GDPR/HIPAA compliance trivially easy. If you are building a document scanner, text extractor, or AI reading app, this is the architecture to adopt in 2026.
 
-Request a free architecture audit to see how we would engineer your specific OCR use case.
+Contact us to see how we would engineer your specific OCR use case.
 `,
   },
   {
@@ -428,7 +428,7 @@ For software agencies and product companies that need extra mobile engineering c
 
 Choosing the right engagement model prevents budget waste and scope misalignment. Whether you need a full turnkey MVP, specialized on-device OCR, an app maintenance retainer, or dedicated developers, Appzys provides senior engineering without agency bloat.
 
-Ready to scope your project? Request a free 48-hour architecture audit today.
+Ready to scope your project? Contact us today.
 `,
   },
 ]
@@ -644,7 +644,7 @@ export const api = {
     } catch {
       return {
         success: true,
-        message: 'Thank you! Your request has been saved. Our senior engineering team will send your 48-Hr Audit shortly.',
+        message: 'Thank you! Your request has been saved. Our senior engineering team will contact you shortly.',
         data: { id: newLocalLead.id, status: 'NEW' },
       }
     }

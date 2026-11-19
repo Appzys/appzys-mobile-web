@@ -133,7 +133,7 @@ export default function AdminDashboardPage() {
             {stats.newLeads}
           </div>
           <div className="mt-1 text-[11px] font-bold text-blue-600">
-            Requires 48-Hr Feasibility Reply
+            Requires Feasibility Reply
           </div>
         </div>
 

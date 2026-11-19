@@ -24,8 +24,15 @@ public class SitemapController {
         List<String> staticPaths = List.of(
                 "/",
                 "/services/mobile-app-development",
+                "/services/ai-ocr-app-development",
                 "/case-studies",
-                "/contact"
+                "/blog",
+                "/contact",
+                "/ios/textscanner/privacypolicy",
+                "/ios/textscanner/termsofuse",
+                "/ios/copytext/privacypolicy",
+                "/ios/handocr/privacypolicy",
+                "/ios/aichat/privacypolicy"
         );
 
         StringBuilder xml = new StringBuilder();
