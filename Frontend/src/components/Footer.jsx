@@ -3,7 +3,7 @@ import { Smartphone, MapPin, Mail, Phone, Globe, Linkedin, ShieldCheck } from 'l
 
 export default function Footer() {
   return (
-    <footer className="border-t border-blue-900/40 bg-gradient-to-r from-[#0A192F] via-[#0F2557] to-[#1D4ED8] pb-20 pt-14 text-blue-100 md:pb-12">
+    <footer className="border-t border-blue-900/40 bg-gradient-to-r from-[#0A192F] via-[#0F2557] to-[#1D4ED8] pb-20 pt-14 text-blue-100 lg:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -30,7 +30,7 @@ export default function Footer() {
             </p>
             <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-xs text-blue-300">
               <ShieldCheck className="h-4 w-4 text-blue-400" />
-              100% Source-Code IP Ownership &amp; NDA Protection From Day 1
+              Source-code ownership and confidentiality agreed before kickoff
             </div>
           </div>
 

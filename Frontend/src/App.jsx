@@ -1,4 +1,5 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -21,12 +22,27 @@ import AdminEstimatesPage from './pages/admin/AdminEstimatesPage'
 import AdminBlogsPage from './pages/admin/AdminBlogsPage'
 import AdminCaseStudiesPage from './pages/admin/AdminCaseStudiesPage'
 
+// Keep navigation predictable when moving from long stories to another route.
+function ScrollToLocation() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null
+      if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' })
+      else window.scrollTo({ top: 0, behavior: 'instant' })
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [pathname, hash])
+  return null
+}
+
 // Layout wrapper for public consumer pages with public Navbar and Footer
 function PublicLayout({ children }) {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1 pb-20 lg:pb-0">{children}</main>
       <Footer />
     </div>
   )
@@ -36,6 +52,7 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollToLocation />
         <Routes>
           {/* PUBLIC CLIENT-FACING ROUTES */}
           <Route

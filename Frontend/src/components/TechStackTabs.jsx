@@ -141,10 +141,10 @@ export default function TechStackTabs() {
             Engineering Capabilities
           </span>
           <h2 className="mt-2 font-display text-2xl font-extrabold text-black sm:text-3xl">
-            Built with Practical Mobile Engineering Experience
+            The engineering behind the experience
           </h2>
           <p className="mt-2 text-sm text-black sm:text-base">
-            Our primary development stack includes Flutter, Dart, Firebase and REST API integration, alongside native Android and iOS capabilities.
+            Explore how we support mobile screens, authentication, backend connectivity, file processing and release preparation.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 const FAQS = [
   {
@@ -9,7 +9,7 @@ const FAQS = [
   },
   {
     q: 'What are the 4 core services customers can purchase from APPZYS?',
-    a: 'You can engage us for: (01) Mobile App Development (new Flutter Android & iOS apps/MVPs), (02) AI Integration & Applications, (03) App Enhancement & Maintenance for existing Flutter apps, and (04) Dedicated Flutter Development (team extension or white-label agency delivery).',
+    a: 'You can engage us for: (01) Mobile App Development (new Flutter Android & iOS apps/MVPs), (02) SaaS & Backend to Mobile App Integration, (03) App Enhancement & Maintenance for existing Flutter apps, and (04) Dedicated Flutter Development (team extension or white-label agency delivery).',
   },
   {
     q: 'How does APPZYS handle AI integration and API-key security?',
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Do we get 100% ownership of our Flutter source code and IP?',
-    a: 'Yes, 100%. We commit directly to your Git repository, sign NDAs upfront, and transfer full source code and intellectual property ownership upon delivery.',
+    a: 'Source-code ownership, repository access, confidentiality and handover are agreed in the engagement terms before implementation. Discuss any licensing or third-party dependencies during scoping.',
   },
 ]
 
@@ -85,7 +85,6 @@ export default function FaqSection() {
             className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700"
           >
             Have a specific architecture question? Contact Us
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

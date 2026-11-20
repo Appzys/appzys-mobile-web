@@ -21,7 +21,7 @@ const METRICS = [
   { target: '620K+', label: 'Reported Google Play downloads', icon: Download },
   { target: '14K+', label: 'Reported US App Store ratings', icon: Star },
   { target: '4.6 / 5', label: 'Referenced US App Store product rating', icon: Award },
-  { target: '8+ Years', label: 'Mobile development experience', icon: Smartphone },
+  { target: '4', label: 'Core mobile engineering services', icon: Smartphone },
 ]
 
 const CORE_VALUES = [
@@ -32,17 +32,17 @@ const CORE_VALUES = [
   },
   {
     title: 'First-Hand Product Experience',
-    desc: 'Our engineering knowledge comes from publishing, maintaining, and scaling our own in-house mobile apps to hundreds of thousands of active store users.',
+    desc: 'Our engineering knowledge comes from publishing, maintaining, and scaling our own in-house mobile apps to a publicly distributed portfolio of mobile applications.',
     icon: Smartphone,
   },
   {
     title: 'Transparent Collaboration',
-    desc: 'You work directly with the developers writing your code. We agree on scope, delivery milestones, and regular build drops with zero agency fluff.',
+    desc: 'You work directly with the developers writing your code. We agree on scope, delivery milestones, and regular build drops with clear review points.',
     icon: Users,
   },
   {
-    title: '100% Client IP & Confidentiality',
-    desc: 'Your intellectual property, credentials, and source code belong completely to you under strict mutual NDA protection from kickoff.',
+    title: 'Ownership & Confidentiality',
+    desc: 'Source-code ownership, credential access, confidentiality and handover expectations are agreed as part of the engagement.',
     icon: ShieldCheck,
   },
 ]
@@ -105,6 +105,8 @@ export default function AboutPage() {
           })}
         </div>
       </section>
+
+      <p className="section-shell evidence-note">Company-reported product figures from the November 2026 capability profile. Downloads are not active-user counts; ratings refer to specific products and stores.</p>
 
       {/* CORE VALUES */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">

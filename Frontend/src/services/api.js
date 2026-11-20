@@ -619,35 +619,14 @@ export const api = {
 
   // Submit Lead from Contact Form
   submitLead: async (payload) => {
-    const currentLeads = getLocalLeads()
-    const newLocalLead = {
-      id: Date.now(),
-      name: payload.name,
-      email: payload.email,
-      phone: payload.phone || '',
-      company: payload.company || '',
-      serviceType: payload.serviceType || '01. Mobile App Development (Flutter)',
-      budgetRange: payload.budgetRange || '$5,000 - $15,000',
-      message: payload.message || '',
-      sourcePage: payload.sourcePage || '/contact',
-      status: 'NEW',
-      internalNotes: '',
-      createdAt: new Date().toISOString(),
+    const result = await request('/leads', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    })
+    if (!result.success || result.offline) {
+      throw new Error('Your inquiry could not be delivered. Please retry or email support@appzys.com. Your form has been kept here.')
     }
-    saveLocalLeads([newLocalLead, ...currentLeads])
-
-    try {
-      return await request('/leads', {
-        method: 'POST',
-        body: JSON.stringify(payload),
-      })
-    } catch {
-      return {
-        success: true,
-        message: 'Thank you! Your request has been saved. Our senior engineering team will contact you shortly.',
-        data: { id: newLocalLead.id, status: 'NEW' },
-      }
-    }
+    return result
   },
 
   getLeads: () => request('/leads'),

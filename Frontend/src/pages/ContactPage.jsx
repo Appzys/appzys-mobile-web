@@ -21,6 +21,7 @@ const SERVICE_OPTIONS = [
 ]
 
 const BUDGET_OPTIONS = [
+  'Not decided yet',
   'Under $5,000',
   '$5,000 - $15,000',
   '$15,000 - $35,000',
@@ -50,13 +51,16 @@ export default function ContactPage() {
   const estimateIdParam = searchParams.get('estimateId')
   const serviceParam = searchParams.get('service')
   const modelParam = searchParams.get('model')
+  const briefParam = searchParams.get('brief')
   const refParam = searchParams.get('ref')
 
   const initialService = SERVICE_OPTIONS.includes(serviceParam)
     ? serviceParam
     : SERVICE_OPTIONS[0]
 
-  const initialMessage = refParam
+  const initialMessage = briefParam
+    ? briefParam
+    : refParam
     ? `Hi Appzys team, I would like to discuss a mobile app similar to "${refParam}".`
     : modelParam
     ? `Hi Appzys team, I'm interested in the "${modelParam}" engagement model.`
@@ -69,7 +73,7 @@ export default function ContactPage() {
     phone: '',
     company: '',
     serviceType: initialService,
-    budgetRange: BUDGET_OPTIONS[1],
+    budgetRange: BUDGET_OPTIONS[0],
     message: initialMessage,
     website: '', // honeypot field
   })
@@ -120,7 +124,7 @@ export default function ContactPage() {
         type: 'success',
         text:
           res.message ||
-          'Thank you! Your request has been saved. Our senior engineers will reply shortly.',
+          'Thank you! Your request has been saved. We will review your project inquiry.',
       })
       setForm({
         name: '',
@@ -128,14 +132,14 @@ export default function ContactPage() {
         phone: '',
         company: '',
         serviceType: SERVICE_OPTIONS[0],
-        budgetRange: BUDGET_OPTIONS[1],
+        budgetRange: BUDGET_OPTIONS[0],
         message: '',
         website: '',
       })
     } catch (err) {
       setStatus({
         type: 'error',
-        text: err.message || 'Unable to submit right now. Please check backend connection.',
+        text: 'Your inquiry could not be delivered. Please retry or email support@appzys.com. Your form has been kept here.',
       })
     } finally {
       setSubmitting(false)
@@ -147,7 +151,7 @@ export default function ContactPage() {
   return (
     <div className="py-14 sm:py-18">
       <SeoHead
-        title="Contact Us & Book Mobile Architecture Consultation | Appzys"
+        title="Discuss your mobile project | APPZYS"
         description="Get in touch with Appzys senior mobile engineering team. Receive technical feasibility assessment, milestone roadmap, and sprint estimates."
         canonicalPath="/contact"
         keywords="contact Appzys, hire mobile app developers India, Flutter project consultation, Appzys Chennai"
@@ -162,10 +166,10 @@ export default function ContactPage() {
         <div className="lg:col-span-5">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
             <Sparkles className="h-3.5 w-3.5" />
-            Contact &amp; Architecture Consultation
+            Start a conversation
           </span>
           <h1 className="mt-4 font-display text-3xl font-extrabold text-[#0A192F]">
-            Have a mobile product to build or a team to extend?
+            Tell us what you’re trying to build.
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
             Whether you need a new Flutter application, integration with an existing backend, improvements
@@ -174,32 +178,32 @@ export default function ContactPage() {
 
           <div className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
             <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              What You Receive From Our Engineers
+              What happens next
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
               <div>
-                <h2 className="text-sm font-bold text-[#0A192F]">Flutter &amp; AI Architecture Plan</h2>
+                <h2 className="text-sm font-bold text-[#0A192F]">Understand your goals</h2>
                 <p className="text-xs text-slate-600">
-                  Clear feasibility on Flutter, Provider, Firebase Cloud Functions &amp; AI API integration.
+                  We review your users, goals, existing systems and open questions.
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Clock className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
               <div>
-                <h2 className="text-sm font-bold text-[#0A192F]">Realistic Timeline &amp; Cost</h2>
+                <h2 className="text-sm font-bold text-[#0A192F]">Agree on a practical next step</h2>
                 <p className="text-xs text-slate-600">
-                  Transparent MVP milestone breakdown with zero hidden agency fees.
+                  We discuss scope and constraints before proposing cost or delivery milestones.
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
               <div>
-                <h2 className="text-sm font-bold text-[#0A192F]">NDA &amp; Full IP Protection</h2>
+                <h2 className="text-sm font-bold text-[#0A192F]">Confirm how we will work together</h2>
                 <p className="text-xs text-slate-600">
-                  Your idea and 100% of the source code stay strictly yours from Sprint 1.
+                  Confidentiality, ownership, communication and support are agreed before work begins.
                 </p>
               </div>
             </div>
@@ -245,7 +249,7 @@ export default function ContactPage() {
             {attachedEstimate && (
               <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-xs text-blue-950">
                 <div className="font-bold">
-                  Attached Scope Estimate #{attachedEstimate.id}:{' '}
+                  Preliminary Scoping Estimate #{attachedEstimate.id}:{' '}
                   ${attachedEstimate.minBudget?.toLocaleString()} &ndash; $
                   {attachedEstimate.maxBudget?.toLocaleString()} ({attachedEstimate.estWeeks} weeks)
                 </div>
@@ -269,20 +273,21 @@ export default function ContactPage() {
               </div>
             )}
 
-            {(modelParam || refParam) && !attachedEstimate && (
+            {(briefParam || modelParam || refParam) && !attachedEstimate && (
               <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-xs text-blue-950">
                 <strong>Selected Inquiry Context:</strong>{' '}
-                {modelParam ? `Engagement Model — ${modelParam}` : `Similar App Reference — ${refParam}`}
+                {briefParam || (modelParam ? `Engagement Model — ${modelParam}` : `Similar App Reference — ${refParam}`)}
               </div>
             )}
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
+                <label htmlFor="contact-name" className="mb-1.5 block text-xs font-semibold text-slate-700">
                   Your Name *
                 </label>
                 <input
                   required
+                  id="contact-name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
@@ -291,12 +296,13 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
+                <label htmlFor="contact-email" className="mb-1.5 block text-xs font-semibold text-slate-700">
                   Work Email *
                 </label>
                 <input
                   required
                   type="email"
+                  id="contact-email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
@@ -305,10 +311,11 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
+                <label htmlFor="contact-phone" className="mb-1.5 block text-xs font-semibold text-slate-700">
                   Phone / WhatsApp
                 </label>
                 <input
+                  id="contact-phone"
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
@@ -317,10 +324,11 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
+                <label htmlFor="contact-company" className="mb-1.5 block text-xs font-semibold text-slate-700">
                   Company / Startup
                 </label>
                 <input
+                  id="contact-company"
                   name="company"
                   value={form.company}
                   onChange={handleChange}
@@ -329,10 +337,11 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
+                <label htmlFor="contact-serviceType" className="mb-1.5 block text-xs font-semibold text-slate-700">
                   Project Focus
                 </label>
                 <select
+                  id="contact-serviceType"
                   name="serviceType"
                   value={form.serviceType}
                   onChange={handleChange}
@@ -346,10 +355,11 @@ export default function ContactPage() {
                 </select>
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-semibold text-slate-700">
-                  Estimated Budget
+                <label htmlFor="contact-budgetRange" className="mb-1.5 block text-xs font-semibold text-slate-700">
+                  Budget range (optional)
                 </label>
                 <select
+                  id="contact-budgetRange"
                   name="budgetRange"
                   value={form.budgetRange}
                   onChange={handleChange}
@@ -365,22 +375,25 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-4">
-              <label className="mb-1.5 block text-xs font-semibold text-slate-700">
-                Tell us about your app idea *
+              <label htmlFor="contact-message" className="mb-1.5 block text-xs font-semibold text-slate-700">
+                What are you trying to build or improve? *
               </label>
               <textarea
                 required
                 rows={4}
+                id="contact-message"
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Target users, key features, or timeline goals..."
+                placeholder="Who is it for? What problem should it solve? Share any existing app, key features or timing goals. No technical specification needed."
                 className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
               />
             </div>
 
             {status.text && (
               <div
+                role="status"
+                aria-live="polite"
                 className={`mt-4 rounded-xl px-4 py-3 text-sm font-medium ${
                   status.type === 'success'
                     ? 'bg-blue-50 text-blue-800'

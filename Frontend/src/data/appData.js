@@ -21,7 +21,7 @@ export const FALLBACK_CASE_STUDIES = [
       'Lightweight, fast and extremely easy to use',
     ],
     engineeringNote:
-      'Combines native platform clipboard integration, background isolates, and on-device ML Kit OCR for sub-90ms extraction.',
+      'Brings together screenshot handling, OCR results and clipboard integration. Recognition quality, permissions and responsiveness are important concerns throughout the workflow.',
     relevance:
       'Demonstrates high-volume production operations: 500K+ downloads with 4.8K App Store reviews and 4.6/5 rating.',
     techStack: ['Android & iOS', 'Flutter & Dart', 'On-Device OCR', 'Multilingual Translation'],
@@ -132,9 +132,12 @@ export const SERVICES_LIST = [
   {
     id: '01',
     slug: 'mobile-app-development',
+    overviewTitle: 'MVP app development',
+    overviewSummary: 'Turn your idea into a first release for Android and iOS.',
+    outcome: 'Idea to launch',
     title: '01 — Full MVP Mobile App Development',
     tag: 'MVP & Product Launch',
-    leadQuestion: 'I need a new Android or iOS application.',
+    leadQuestion: 'Have an app idea? Build the first working version.',
     summary:
       'Build your first Android and iOS application using Flutter, with Firebase, API integration and native functionality where required.',
     description:
@@ -150,9 +153,12 @@ export const SERVICES_LIST = [
   {
     id: '02',
     slug: 'mobile-app-integration',
+    overviewTitle: 'SaaS & backend integration',
+    overviewSummary: 'Bring your existing platform to mobile through connected APIs and workflows.',
+    outcome: 'Web to mobile',
     title: '02 — SaaS & Backend to Mobile App Integration',
     tag: 'Web & Backend Extension',
-    leadQuestion: 'Have an existing platform to bring to Android and iOS?',
+    leadQuestion: 'Already have a web platform? Bring it to Android and iOS.',
     summary:
       'Extend an existing web application, SaaS platform or backend system to Android and iOS using existing APIs and business workflows.',
     description:
@@ -168,9 +174,12 @@ export const SERVICES_LIST = [
   {
     id: '03',
     slug: 'app-enhancement-maintenance',
+    overviewTitle: 'App maintenance & enhancement',
+    overviewSummary: 'Fix issues, upgrade dependencies and add features to your existing Flutter app.',
+    outcome: 'Improve & maintain',
     title: '03 — Mobile App Maintenance & Enhancement',
     tag: 'Lifecycle & Stability',
-    leadQuestion: 'Need to improve, stabilize or extend an existing Flutter application?',
+    leadQuestion: 'Have a Flutter app? Improve, upgrade and extend it.',
     summary:
       'Improve Flutter applications through new features, bug fixes, dependency upgrades, platform compatibility and performance improvements.',
     description:
@@ -186,9 +195,12 @@ export const SERVICES_LIST = [
   {
     id: '04',
     slug: 'dedicated-flutter-development',
+    overviewTitle: 'Dedicated Flutter development',
+    overviewSummary: 'Add mobile engineering capacity to your product team or agency.',
+    outcome: 'Extend your team',
     title: '04 — Dedicated Flutter Development',
     tag: 'Team & Engineering Capacity',
-    leadQuestion: 'Need additional Flutter development capacity for your upcoming delivery?',
+    leadQuestion: 'Need more mobile engineering capacity? Extend your team.',
     summary:
       'Add Flutter development capacity to an existing software or product team for features, integrations and mobile engineering work.',
     description:
@@ -229,7 +241,7 @@ export const SERVICE_COMPARISON = [
     dimension: 'Main Deliverable',
     s1: 'Complete Android & iOS Flutter app',
     s2: 'Integrated API, backend & data workflows',
-    s3: 'Bug-free, modernized & maintained app',
+    s3: 'Prioritized fixes, upgrades & maintenance',
     s4: 'Dedicated developer hours or white-label code',
   },
   {
