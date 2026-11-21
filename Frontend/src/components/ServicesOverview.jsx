@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Rocket, Workflow, Cog, UsersRound, Plus } from 'lucide-react'
+import { Rocket, Layers, Cog, Users, ArrowRight } from 'lucide-react'
 
 const ICONS = {
   'mobile-app-development': Rocket,
-  'mobile-app-integration': Workflow,
+  'mobile-app-integration': Layers,
   'app-enhancement-maintenance': Cog,
-  'dedicated-flutter-development': UsersRound,
+  'dedicated-flutter-development': Users,
 }
 import { SERVICES_LIST } from '../data/appData'
 
@@ -31,13 +31,13 @@ export default function ServicesOverview() {
                 aria-label={`Explore ${service.overviewTitle}`}
               >
                 <div className="service-card-heading">
-                  <span className="service-card-icon"><Icon size={24} strokeWidth={1.8} aria-hidden="true" /></span>
+                  <span className="service-card-icon"><Icon size={32} strokeWidth={1.8} aria-hidden="true" /></span>
                   <span className="service-overview-outcome">{service.outcome}</span>
                 </div>
                 <div className="service-overview-content">
                 <h3>{service.overviewTitle}</h3>
                 <p>{service.overviewSummary}</p>
-                <span className="service-overview-action"><span>Explore this service</span><span className="service-card-plus"><Plus size={18} aria-hidden="true" /></span></span>
+                <span className="service-overview-action"><span>Explore this service</span><span className="service-card-plus"><ArrowRight size={20} aria-hidden="true" /></span></span>
                 </div>
               </Link>
             )

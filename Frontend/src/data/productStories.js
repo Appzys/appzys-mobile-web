@@ -45,6 +45,26 @@ export const PRODUCT_STORIES = {
     ],
     service: 'Scanning, recognition and document organization.',
   },
+  'live-transcribe': {
+    headline: 'Stay with the conversation. Keep the words.',
+    outcome: 'Live speech, ready to read and revisit.', color: 'teal',
+    steps: [
+      { title: 'Listen', description: 'Start a live speech session.' },
+      { title: 'Transcribe', description: 'Follow recognized text as the conversation unfolds.' },
+      { title: 'Revisit', description: 'Review, translate or explore the saved transcript.' },
+    ],
+    service: 'Live audio capture, multilingual text and transcript experiences.',
+  },
+  'ai-study-tutor': {
+    headline: 'Understand the material. Practice what matters.',
+    outcome: 'A study source becomes an active learning session.', color: 'violet',
+    steps: [
+      { title: 'Bring material', description: 'Import a document or photograph a study question.' },
+      { title: 'Understand', description: 'Explore explanations and ask follow-up questions.' },
+      { title: 'Practice', description: 'Revise with summaries, flashcards and quizzes.' },
+    ],
+    service: 'Document interaction, AI assistance and educational workflows.',
+  },
 }
 
 export const METRICS_NOTE = 'Company-reported figures from the November 2026 capability profile. Downloads and ratings refer to different stores and are not active-user counts.'

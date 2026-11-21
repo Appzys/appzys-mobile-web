@@ -3,7 +3,7 @@ import { Smartphone, MapPin, Mail, Phone, Globe, Linkedin, ShieldCheck } from 'l
 
 export default function Footer() {
   return (
-    <footer className="border-t border-blue-900/40 bg-gradient-to-r from-[#0A192F] via-[#0F2557] to-[#1D4ED8] pb-20 pt-14 text-blue-100 lg:pb-12">
+    <footer className="border-t border-blue-900/40 bg-[#10264b] pb-20 pt-14 text-blue-100 lg:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -105,12 +105,12 @@ export default function Footer() {
               <li className="flex items-center gap-2.5 pt-1">
                 <Linkedin className="h-4 w-4 shrink-0 text-blue-300" />
                 <a
-                  href="https://linkedin.com/company/appzys"
+                  href="https://www.linkedin.com/company/appzys-technologies-private-limited/home"
                   target="_blank"
                   rel="noreferrer"
                   className="font-semibold text-blue-300 hover:text-white hover:underline transition"
                 >
-                  linkedin.com/company/appzys
+                  APPZYS on LinkedIn
                 </a>
               </li>
             </ul>

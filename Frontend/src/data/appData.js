@@ -9,14 +9,14 @@ export const FALLBACK_CASE_STUDIES = [
     rating: 4.6,
     ratingLabel: '4.6 rating, 4.8K App Store ratings',
     summary:
-      'Extracts text from images, screenshots and non-selectable content using multilingual OCR workflows.',
+      'Extract text from screenshots and images. Share a screenshot with the app, select an area, then copy, save or translate the recognized text.',
     challenge:
       'Text trapped in images, apps, or non-selectable screens cannot always be selected directly. Users otherwise need to retype the information or use a separate workaround.',
     solution:
       'Built screenshot-sharing integration, image-based OCR processing, and text selection/extraction with multilingual translation workflows.',
     capabilities: [
-      'OCR from any screen & image-based processing',
-      'Supports multiple languages & instant translation',
+      'Extract text from shared screenshots and images',
+      'Multilingual text recognition and translation',
       'Copy, share, export and save text workflows',
       'Lightweight, fast and extremely easy to use',
     ],
@@ -36,14 +36,14 @@ export const FALLBACK_CASE_STUDIES = [
     rating: 4.6,
     ratingLabel: '4.6 rating, 9.2K App Store ratings',
     summary:
-      'Extracts text from documents and images, supports PDF processing and AI-powered summarization.',
+      'Extract text from photos, PDFs and handwritten notes. Scan documents to PDF and use AI to summarize, translate or ask questions about images and PDFs.',
     challenge:
       'Extracting and working with text from documents and images often suffers from camera distortion, complex columns, and noisy backgrounds.',
     solution:
       'Built an end-to-end OCR + AI processing workflow with large document handling, optimized for seamless mobile performance.',
     capabilities: [
       'Image and document to text (OCR)',
-      'PDF text extraction and structured parsing',
+      'Document scanning, PDF import and text extraction',
       'AI-powered document summarization and Q&A',
       'Multi-language translation and export support',
     ],
@@ -61,9 +61,9 @@ export const FALLBACK_CASE_STUDIES = [
     category: 'Multilingual Audio & Applied AI',
     installsLabel: '10K+ reported Google Play downloads',
     rating: 4.6,
-    ratingLabel: '4.6 rating, 404 Google Play ratings',
+    ratingLabel: '4.6 rating, 412 Google Play ratings',
     summary:
-      'Converts audio and video into text, with AI-generated summaries and transcript interaction.',
+      'Record speech or import audio and video to create transcripts. Review recordings, generate AI summaries, translate text and chat with transcript content.',
     challenge:
       'Converting long audio or video files into useful, actionable text is computationally intensive, expensive over third-party APIs, and prone to mobile network drops.',
     solution:
@@ -107,24 +107,31 @@ export const FALLBACK_CASE_STUDIES = [
       'Relevant to education software, digitization, digital recordkeeping, and focused productivity products.',
     techStack: ['Android & iOS', 'Handwriting AI', 'Batch Scanning', 'Folder Organization'],
   },
-]
-
-export const EMERGING_PRODUCTS = [
   {
-    name: 'Live Transcribe',
-    tagline: 'Real-time speech-to-text',
-    category: 'Live Audio Workflows / AI Speech Recognition',
-    status: 'In Active Development • 500+ Downloads',
-    summary:
-      'A mobile product focused on converting spoken conversations into readable text, exploring live recognition, multilingual experiences, and practical speech capture.',
+    slug: 'live-transcribe', appName: 'Live Transcribe',
+    frontImage: '/product-icons/live-transcribe.png',
+    tagline: 'Live conversations, ready to read and revisit',
+    category: 'Multilingual Audio & Applied AI',
+    installsLabel: '500+ Google Play downloads', ratingLabel: 'Live on Google Play',
+    summary: 'Captures live speech as text, with translation, AI summaries and saved transcript conversations.',
+    challenge: 'Spoken information is easy to miss and difficult to revisit while a conversation is still happening.',
+    solution: 'A live transcript experience with original text, follow-up tools and saved sessions.',
+    capabilities: ['Live transcription', 'Translation', 'AI summaries', 'Transcript chat and history'],
+    engineeringNote: 'Live capture requires careful session state, incremental results and microphone lifecycle handling.',
+    techStack: ['Speech recognition', 'Microphone integration', 'Transcript tools'],
   },
   {
-    name: 'AI Study Tutor',
-    tagline: 'AI-assisted study and document learning',
-    category: 'Education Technology / AI Document Interaction',
-    status: 'In Active Development • 500+ Downloads',
-    summary:
-      'An educational application exploring question-answering and learning workflows around study material, PDFs, and homework-related tasks.',
+    slug: 'ai-study-tutor', appName: 'AI Study Tutor',
+    frontImage: '/product-icons/ai-study-tutor.png',
+    tagline: 'From difficult material to a more active study session',
+    category: 'Education & Document Learning',
+    installsLabel: '500+ Google Play downloads', ratingLabel: 'Live on Google Play',
+    summary: 'Combines document chat and photo-based study questions with explanations, flashcards and quizzes.',
+    challenge: 'Students need to move between source material, difficult questions and revision without losing context.',
+    solution: 'A study workspace that connects imported material with explanations, follow-up questions and revision tools.',
+    capabilities: ['Document chat', 'Study question capture', 'Step explanations', 'Flashcards and quizzes'],
+    engineeringNote: 'Study context and structured answers need to stay associated with their source material.',
+    techStack: ['Document processing', 'AI tutoring', 'Study tools'],
   },
 ]
 
@@ -196,15 +203,15 @@ export const SERVICES_LIST = [
     id: '04',
     slug: 'dedicated-flutter-development',
     overviewTitle: 'Dedicated Flutter development',
-    overviewSummary: 'Add mobile engineering capacity to your product team or agency.',
-    outcome: 'Extend your team',
+    overviewSummary: 'Hire a dedicated Flutter partner to develop and maintain your company’s mobile solution.',
+    outcome: 'Your mobile development partner',
     title: '04 — Dedicated Flutter Development',
-    tag: 'Team & Engineering Capacity',
-    leadQuestion: 'Need more mobile engineering capacity? Extend your team.',
+    tag: 'Dedicated Mobile Development',
+    leadQuestion: 'Need a development partner for your company’s mobile app?',
     summary:
-      'Add Flutter development capacity to an existing software or product team for features, integrations and mobile engineering work.',
+      'Work with a dedicated Flutter partner across requirements, development, integrations, testing, release and ongoing mobile application improvements.',
     description:
-      'Add Flutter development capacity to your team for ongoing or upcoming mobile projects.',
+      'Dedicated Flutter development for your company’s new or existing mobile application, from planning through release and ongoing support.',
     capabilities: [
       'Flutter feature development and screen workflows',
       'REST API and Firebase integration',

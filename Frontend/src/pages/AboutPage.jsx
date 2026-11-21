@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
-  Award,
   CheckCircle2,
   Code2,
-  Download,
   Globe,
   Mail,
   MapPin,
@@ -12,17 +10,9 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Star,
   Users,
 } from 'lucide-react'
 import SeoHead from '../components/SeoHead'
-
-const METRICS = [
-  { target: '620K+', label: 'Reported Google Play downloads', icon: Download },
-  { target: '14K+', label: 'Reported US App Store ratings', icon: Star },
-  { target: '4.6 / 5', label: 'Referenced US App Store product rating', icon: Award },
-  { target: '4', label: 'Core mobile engineering services', icon: Smartphone },
-]
 
 const CORE_VALUES = [
   {
@@ -80,33 +70,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
-      {/* METRICS STRIP */}
-      <section className="border-b border-slate-200 bg-slate-50 py-10">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 sm:gap-6 sm:px-6 lg:grid-cols-4 lg:px-8">
-          {METRICS.map((item) => {
-            const Icon = item.icon
-            return (
-              <div
-                key={item.label}
-                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-xs"
-              >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 ring-1 ring-blue-100">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span className="mt-4 font-display text-2xl font-black text-[#0A192F] sm:text-3xl">
-                  {item.target}
-                </span>
-                <span className="mt-1 text-xs font-medium text-slate-600">
-                  {item.label}
-                </span>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
-      <p className="section-shell evidence-note">Company-reported product figures from the November 2026 capability profile. Downloads are not active-user counts; ratings refer to specific products and stores.</p>
 
       {/* CORE VALUES */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -201,6 +164,34 @@ export default function AboutPage() {
                 View Our Applications
               </Link>
             </div>
+          </div>
+          <div className="mt-10 overflow-hidden rounded-2xl border border-slate-200">
+            <div className="flex flex-wrap items-center justify-between gap-4 bg-slate-50 px-5 py-4">
+              <div>
+                <h3 className="font-display text-lg font-bold text-[#0A192F]">Our Guindy office</h3>
+                <p className="mt-1 text-sm text-slate-600">APPZYS Technologies · Chennai, India</p>
+              </div>
+              <a
+                href="https://maps.app.goo.gl/pXatubDjUxfZpJjc6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+                aria-label="Get directions to APPZYS on Google Maps (opens in a new tab)"
+              >
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                Get directions
+              </a>
+            </div>
+            <iframe
+              title="APPZYS Technologies Guindy office location on Google Maps"
+              src="https://www.google.com/maps?cid=9602372314141563544&z=17&output=embed"
+              width="100%"
+              height="360"
+              className="block w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>

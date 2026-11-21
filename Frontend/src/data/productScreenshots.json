@@ -1,0 +1,156 @@
+{
+  "copy-text-on-screen": [
+    {
+      "src": "/product-screenshots/copy-text-on-screen-original-1.webp",
+      "width": 1440,
+      "height": 3040,
+      "source": "https://play.google.com/store/apps/details?id=com.copy.paste.ocr.screen.text.copy.text.on.screen",
+      "original": "https://play-lh.googleusercontent.com/gCGlcc22TBUQ7-TgM0cs5GrbnAS6u5PR5uoLMEUpbZ_Mfq7D27DpOCiy5-V9pMxMu4Z0xhTOmYjjpxcsvyX5=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/copy-text-on-screen-original-2.webp",
+      "width": 1440,
+      "height": 2880,
+      "source": "https://play.google.com/store/apps/details?id=com.copy.paste.ocr.screen.text.copy.text.on.screen",
+      "original": "https://play-lh.googleusercontent.com/raXukqSRlzhH8wgki9-fN9a14Vc6QG8ACsCOlxj2TUzZ-p4zCzs31ITShvJuYKyNK--2KDozlgw2JCeIwAPu=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/copy-text-on-screen-original-3.webp",
+      "width": 1440,
+      "height": 2880,
+      "source": "https://play.google.com/store/apps/details?id=com.copy.paste.ocr.screen.text.copy.text.on.screen",
+      "original": "https://play-lh.googleusercontent.com/M1H4ZHNHG4O5Md_0NerTNcD5hV3H61C_1hTusbg0zV9Sxej524ppcfpwmhA0WhzvWYRCxHyYvYo1lWWecYodWw=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ],
+  "ai-text-scanner": [
+    {
+      "src": "/product-screenshots/ai-text-scanner-original-1.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.offline.ocr.english.image.to.text.scanner",
+      "original": "https://play-lh.googleusercontent.com/aVYdsC7ySu1b6YFq8q2IVQl-YxPU2ccOtMvt7jy2M-ZiLj1MjX8Sxds3ZWecmh3Aqe-0F37faO22GIT-E3NagA=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-text-scanner-original-2.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.offline.ocr.english.image.to.text.scanner",
+      "original": "https://play-lh.googleusercontent.com/FDSisxgSOa2p4R6uScBu9jzVAhAhA20E5R6veXgsz058nxdPtczLuaFGX8-oeEtnm3fl4_tk_skPJOCNwwaVSw=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-text-scanner-original-3.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.offline.ocr.english.image.to.text.scanner",
+      "original": "https://play-lh.googleusercontent.com/vvJ5rkN5ryI559-RKUWrZf51lXvkbFpR_hLxhbldgmWV7dYvHuAjW5hWaLgwKzGtr4ov8D3-d9HaAwuK1NrOKw=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ],
+  "ai-transcript-audio-to-text": [
+    {
+      "src": "/product-screenshots/ai-transcript-audio-to-text-original-1.webp",
+      "width": 1080,
+      "height": 1920,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.aitranscribe",
+      "original": "https://play-lh.googleusercontent.com/EgHIIKh1Wfwzy_Iv4xlg1867nyv31uG97Bt1bH6Nq9NgIxm_9yMuvjpDpJ8k0PKUULcFgVWh-ss4qebN-xbFslc=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-transcript-upload.png",
+      "width": 333,
+      "height": 592,
+      "presentation": "User-provided AI Transcript upload promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-transcript-audio-to-text-original-3.webp",
+      "width": 1080,
+      "height": 1920,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.aitranscribe",
+      "original": "https://play-lh.googleusercontent.com/0JHNxMGGKVyk37Biiu9bEvW-2NyA55rXHBZgp9W11WZUx1vnE1HDSg5444y-l0JDmxex7Vnu5oHoRpF_gOqPWQ=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ],
+  "handwriting-to-text-scanner": [
+    {
+      "src": "/product-screenshots/handwriting-to-text-scanner-original-1.webp",
+      "width": 1080,
+      "height": 1920,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.handwriting.ocr.handyscan",
+      "original": "https://play-lh.googleusercontent.com/Cma_dccBSMYQJwKfjKsKbQ4ekkKR9k-2eiIVCRNq1GVXgL-qimlFcE0CXclDPrQ0DTGMsRJIsVix8vnKfFP-ag=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/handwriting-to-text-scanner-original-2.webp",
+      "width": 1080,
+      "height": 1920,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.handwriting.ocr.handyscan",
+      "original": "https://play-lh.googleusercontent.com/AcGuJE2vHkX5Q-MRGMeia8yxghXGnB4cFRUjYm4rCuuiIbW9ZNZHFHw7pXOD0z4264LEZ09PykljxG6UNterQAU=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/handwriting-to-text-scanner-original-3.webp",
+      "width": 1080,
+      "height": 1920,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.handwriting.ocr.handyscan",
+      "original": "https://play-lh.googleusercontent.com/9OxPOWRmQYOVNn5D1-u2KF0I5fG5UBwRIlRuDAr13gKk-5HA04vugGm5iamj43T1MS4R2EBJC3ZCLqTdtni1=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ],
+  "live-transcribe": [
+    {
+      "src": "/product-screenshots/live-transcribe-original-1.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.live.transcribe",
+      "original": "https://play-lh.googleusercontent.com/JAB3E6jh93erJWxUc9CSEw7YeTNasSUQ7n7osZummyERY1ptOaFV6JNV7dwDZ37p5AvW3Lw6Lqjwpxwwf6ZvCg=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/live-transcribe-original-2.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.live.transcribe",
+      "original": "https://play-lh.googleusercontent.com/z5hAQBMA1sBzC8qXEG7a5qnL2dTqBHaR89pSaS3m5rLMUIjokImUVtltIPBdw3kpkMdw5TUm9Ppgjhm-fWFnGDk=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/live-transcribe-original-3.webp",
+      "width": 1440,
+      "height": 2560,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.live.transcribe",
+      "original": "https://play-lh.googleusercontent.com/5pycn1RxOIdekKiMRjDj83LL8QNGJDcVcZxKci078dkK6qSvyNwGqUh_Bh3hgdDpEdAK7S_qEQb86KrIpLpl2A=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ],
+  "ai-study-tutor": [
+    {
+      "src": "/product-screenshots/ai-study-tutor-original-1.webp",
+      "width": 941,
+      "height": 1672,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.pdfchat_aichatwithpdf",
+      "original": "https://play-lh.googleusercontent.com/dnPpD0nJhmXl3beVq7csV8Z95gpETcG4MASGkQxocuSo6zHAf7lsvWTIJFmsRtF7_06Rm9vyQLK_sWfh63_L5Jo=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-study-tutor-original-2.webp",
+      "width": 941,
+      "height": 1672,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.pdfchat_aichatwithpdf",
+      "original": "https://play-lh.googleusercontent.com/7jP4uOqR_Qm0B0MW5b4P5eqQmefESeA0Bvcs7wKacD3-WXIFwAon_LLeAw4Jr0HM4bNB6ZUmJ8cq3XbHbn9POQ=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    },
+    {
+      "src": "/product-screenshots/ai-study-tutor-original-3.webp",
+      "width": 941,
+      "height": 1672,
+      "source": "https://play.google.com/store/apps/details?id=com.appzys.pdfchat_aichatwithpdf",
+      "original": "https://play-lh.googleusercontent.com/_7vv8f-ek09VEKWlquvQwGv1sHASvVM2gm_c3RB29VNrbtmjcmdiO-wVQ7Sf77F6ELDDjWV_u0BSJaRLrcP0PRk=s0",
+      "presentation": "Original-resolution Google Play promotional screenshot"
+    }
+  ]
+}

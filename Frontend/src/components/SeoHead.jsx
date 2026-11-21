@@ -87,7 +87,7 @@ export default function SeoHead({
         email: 'support@appzys.com',
       },
       sameAs: [
-        'https://www.linkedin.com/company/appzys',
+        'https://www.linkedin.com/company/appzys-technologies-private-limited/home',
         'https://play.google.com/store/apps/developer?id=Appzys+-+AI+Apps,+Scanner+%26+OCR',
       ],
       priceRange: '$$',
