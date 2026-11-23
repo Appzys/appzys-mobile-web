@@ -596,13 +596,9 @@ footer a { overflow-wrap: anywhere; }
 .catalog-indigo { --panel-bg:#eeeffc; }
 .catalog-blue { --panel-bg:#e9f4fc; }
 .product-panel:nth-child(even) .product-panel-visual { order:2; }
-.product-visual-brand { display:flex; gap:14px; align-items:center; margin-bottom:26px; }
-.product-visual-brand .catalog-icon { width:52px; height:52px; border-radius:13px; }
-.product-visual-brand span { display:block; color:#516078; font-size:.875rem; font-weight:650; letter-spacing:.06em; }
-.product-visual-brand strong { display:block; font-size:1.125rem; margin-top:4px; }
-.product-preview-copy { margin-bottom:28px; width:100%; text-align:left; }
-.editorial-site .product-preview-headline { margin:0; color:#111a2e; font-size:clamp(1.25rem,1.65vw,1.625rem); font-weight:700; line-height:1.25; letter-spacing:-.025em; text-wrap:pretty; }
-.editorial-site .product-preview-description { margin:12px 0 0; color:#516078; font-size:1rem; line-height:1.5; text-wrap:pretty; }
+.product-preview-copy { margin-bottom:32px; width:100%; text-align:left; }
+.editorial-site .product-preview-headline { max-width:20ch; margin:0; color:#111a2e; font-family:var(--font-display); font-size:clamp(2rem,3vw,2.75rem); font-weight:800; line-height:1.12; letter-spacing:-.035em; text-wrap:balance; overflow-wrap:break-word; }
+.editorial-site .product-preview-description { max-width:48ch; margin:16px 0 0; color:#516078; font-size:clamp(1rem,1.15vw,1.125rem); line-height:1.65; text-wrap:pretty; }
 .product-screen-gallery { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:center; }
 .product-screen-gallery a { display:block; min-width:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 26px #10244920; transition:transform .2s; }
 .product-screen-gallery a:hover { transform:translateY(-4px); }
@@ -628,6 +624,7 @@ footer a { overflow-wrap: anywhere; }
  .product-panel-content .catalog-identity { align-items:flex-start; }
 }
 @media (max-width:800px) {
+ .editorial-site .product-preview-headline { font-size:clamp(1.75rem,5vw,2.25rem); }
  .product-panel { grid-template-columns:1fr; }
  .product-panel:nth-child(even) .product-panel-visual { order:0; }
  .product-panel-visual { padding:28px 24px 20px; }
@@ -1220,3 +1217,69 @@ footer a { overflow-wrap: anywhere; }
  .service-problem h4, .service-solution h4 { font-size:1rem; }
 }
 @media (prefers-reduced-motion:reduce) { .phone-screen-shimmer { animation:none; display:none; } }
+
+/* Shared product-surface art direction with app-specific colors. */
+.case-surface-showcase { --surface-accent:var(--case-accent,#2563eb); gap:24px; }
+[data-product="copy-text-on-screen"] .case-surface-showcase { --surface-accent:#009b8d; }
+[data-product="ai-text-scanner"] .case-surface-showcase { --surface-accent:#2877d4; }
+[data-product="ai-transcript-audio-to-text"] .case-surface-showcase { --surface-accent:#167ebc; }
+[data-product="handwriting-to-text-scanner"] .case-surface-showcase { --surface-accent:#635bd5; }
+[data-product="live-transcribe"] .case-surface-showcase { --surface-accent:#139b9c; }
+[data-product="ai-study-tutor"] .case-surface-showcase { --surface-accent:#2865f6; }
+.case-surface-showcase figure,
+.case-surface-showcase figure:last-child { display:block; grid-column:auto; }
+[data-product] .case-surface-showcase .surface-art {
+ position:relative; isolation:isolate; display:flex; align-items:center; justify-content:center;
+ aspect-ratio:4 / 5.1; overflow:hidden; padding:30px 16px 40px; border-radius:22px;
+ border:1px solid color-mix(in srgb,var(--surface-accent) 23%,white);
+ background:radial-gradient(ellipse at 18% 12%,#ffffffa6,transparent 62%),linear-gradient(145deg,color-mix(in srgb,var(--surface-accent) 10%,white),color-mix(in srgb,var(--surface-accent) 5%,white) 52%,color-mix(in srgb,var(--surface-accent) 12%,white));
+}
+.surface-workflow-icon { position:absolute; z-index:3; top:18px; left:18px; display:grid; place-items:center; width:48px; height:48px; border-radius:14px; color:var(--surface-accent); background:linear-gradient(140deg,white,#f5f7ff); border:1px solid white; box-shadow:0 8px 18px color-mix(in srgb,var(--surface-accent) 18%,transparent); }
+.surface-workflow-icon svg { width:28px; height:28px; stroke-width:1.8; }
+.surface-orbit { position:absolute; z-index:-1; width:108%; height:53%; top:33%; left:-2%; border-radius:50%; background:linear-gradient(140deg,color-mix(in srgb,var(--surface-accent) 23%,transparent),color-mix(in srgb,var(--surface-accent) 10%,transparent) 58%,transparent 94%); transform:rotate(-24deg); }
+.case-surface-showcase figure:nth-child(2) .surface-art::before { content:""; position:absolute; z-index:-1; width:106%; height:43%; top:23%; left:1%; border-radius:50%; background:linear-gradient(145deg,color-mix(in srgb,var(--surface-accent) 19%,transparent),transparent 85%); transform:rotate(-13deg); }
+.case-surface-showcase figure:nth-child(3) .surface-orbit { width:99%; height:48%; top:32%; left:2%; transform:rotate(-22deg); }
+.surface-ground { position:absolute; z-index:0; bottom:4.5%; left:12%; width:78%; height:8%; border-radius:50%; background:radial-gradient(ellipse at center,color-mix(in srgb,var(--surface-accent) 29%,transparent) 0%,color-mix(in srgb,var(--surface-accent) 18%,transparent) 42%,color-mix(in srgb,var(--surface-accent) 6%,transparent) 68%,transparent 76%); }
+.surface-ground::after { content:""; position:absolute; inset:26% 20%; border-radius:50%; background:radial-gradient(ellipse,color-mix(in srgb,var(--surface-accent) 55%,#203047) 0%,color-mix(in srgb,var(--surface-accent) 30%,transparent) 38%,transparent 73%); opacity:.5; filter:blur(3px); }
+.surface-phone { position:relative; z-index:1; display:flex; align-items:center; justify-content:center; width:65%; aspect-ratio:1 / 2.05; padding:7px; border:2px solid #9ba6b4; border-radius:clamp(20px,2.5vw,34px); background:#11151c; box-shadow:3px 3px 0 #697482,6px 7px 0 #c1c8d1,0 10px 12px #192d4b1c; transform:perspective(900px) rotateY(-9deg) rotateZ(5deg); }
+[data-product] .case-surface-showcase .surface-phone img { display:block; width:100%; height:100%; max-height:none; min-height:0; object-fit:contain; border-radius:22px; background:#fff; filter:none; }
+.surface-spark { position:absolute; right:8%; top:32%; width:22px; height:30px; color:var(--surface-accent); }
+.surface-spark i { position:absolute; top:13px; width:13px; height:3px; background:currentColor; border-radius:4px; }
+.surface-spark i:first-child { transform:translate(-3px,-10px) rotate(-45deg); }
+.surface-spark i:last-child { transform:translate(-3px,10px) rotate(45deg); }
+.case-surface-showcase figure:nth-child(2) .surface-orbit { top:54%; left:0; height:41%; transform:rotate(-24deg); background:linear-gradient(140deg,color-mix(in srgb,var(--surface-accent) 21%,transparent),color-mix(in srgb,var(--surface-accent) 6%,transparent) 75%); }
+.case-surface-showcase figure:nth-child(2) .surface-spark { top:52%; }
+.case-surface-showcase figcaption { padding:18px 2px 0; }
+.surface-art:focus-visible { outline:3px solid var(--surface-accent); outline-offset:4px; }
+@media (max-width:1050px) and (min-width:801px) {
+ .surface-workflow-icon { top:12px; left:12px; width:36px; height:36px; border-radius:11px; }
+ .surface-workflow-icon svg { width:23px; height:23px; }
+}
+@media (max-width:800px) {
+ .case-surface-showcase { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:540px) {
+ .case-surface-showcase { grid-template-columns:1fr; gap:28px; }
+ [data-product] .case-surface-showcase .surface-art { max-width:380px; margin-inline:auto; }
+ .case-surface-showcase figcaption { padding-top:18px; }
+}
+
+/* Screen interiors fill one device without promotional borders or letterboxing. */
+.surface-phone { overflow:hidden; }
+[data-product] .case-surface-showcase .surface-phone img { object-fit:fill; }
+
+/* Hero previews share product artwork, with strictly front-facing devices. */
+.case-hero-mockups { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+[data-product] .case-hero-mockups .surface-art { aspect-ratio:1 / 2; padding:46px 12px 28px; border-radius:20px; }
+.case-hero-mockups .surface-phone { width:88%; aspect-ratio:1 / 2.05; transform:none; border-radius:26px; padding:5px; box-shadow:1px 1px 0 #697482,2px 2px 0 #c1c8d1,0 10px 14px #192d4b24; }
+[data-product] .case-hero-mockups .surface-phone img { border-radius:19px; }
+.case-hero-mockups .surface-workflow-icon { width:34px; height:34px; top:10px; left:10px; border-radius:10px; }
+.case-hero-mockups .surface-workflow-icon svg { width:22px; height:22px; }
+.case-hero-mockups .surface-spark { display:none; }
+.case-hero-mockups + p { margin-top:14px; color:#64748b; font-size:.875rem; text-align:center; }
+@media (max-width:540px) {
+ .case-hero-mockups { gap:10px; }
+ [data-product] .case-hero-mockups .surface-art { padding:40px 8px 24px; border-radius:16px; }
+ .case-hero-mockups .surface-phone { width:92%; border-radius:22px; padding:4px; }
+ [data-product] .case-hero-mockups .surface-phone img { border-radius:16px; }
+}

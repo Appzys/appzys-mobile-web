@@ -50,7 +50,6 @@ export default function AiProductCatalog() {
     <div className="product-panel-list">
       {FALLBACK_CASE_STUDIES.slice(0, 3).map(app => <article className={`product-panel catalog-${PRODUCT_LISTINGS[app.slug].accent}`} key={app.slug} data-product={app.slug}>
         <div className="product-panel-visual">
-          <div className="product-visual-brand"><ProductIcon slug={app.slug} /><div><strong>{app.appName}</strong></div></div>
           <div className="product-preview-copy">
             <p className="product-preview-headline">{PRODUCT_PREVIEW_COPY[app.slug].headline}</p>
             <p className="product-preview-description">{PRODUCT_PREVIEW_COPY[app.slug].description}</p>
