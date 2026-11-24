@@ -20,7 +20,7 @@ export default function CaseStudySurfaces({ slug, name, surfaces, screens, hero 
           <span className="surface-orbit" aria-hidden="true" />
           <span className="surface-ground" aria-hidden="true" />
           <span className="surface-phone">
-            <img src={`/product-screenshots/${slug}-surface-${index + 1}.webp`} alt={`${name} screen content accompanying ${title}`} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager && index === 0 ? 'high' : 'auto'} decoding="async" width="400" height="820" />
+            <img src={`/product-screenshots/${slug}-surface-${index + 1}.png`} alt={`${name} screen content accompanying ${title}`} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager && index === 0 ? 'high' : 'auto'} decoding="async" width="720" height="1520" />
           </span>
           <span className="surface-spark" aria-hidden="true"><i /><i /><i /></span>
         </a>

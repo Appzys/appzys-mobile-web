@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowLeft, BatteryFull, Copy, Languages, Link2, MoreVertical, Share2, Signal, Wifi } from 'lucide-react'
+import { ArrowLeft, Copy, Languages, Link2, MoreVertical, Share2 } from 'lucide-react'
 import { FALLBACK_CASE_STUDIES } from '../data/appData'
 import StoreIcon from './StoreIcon'
 import ProductStoreLinks from './ProductStoreLinks'
@@ -19,8 +19,7 @@ function ProductIcon({ slug }) {
 
 function PhoneStatusBar() {
   return <span className="product-phone-status-bar" aria-hidden="true">
-    <span>9:41</span>
-    <span className="product-phone-status-icons"><Signal /><Wifi /><BatteryFull /></span>
+    <img src="/product-screenshots/shared-status-bar.png" alt="" />
   </span>
 }
 
@@ -37,25 +36,22 @@ function ScannerScreenPreview() {
   </span>
 }
 
-function CopyScreenPreview({ screen }) {
-  return <span className="copy-screen-preview">
-    <span className="copy-preview-content"><img src={screen.src} width={screen.width} height={screen.height} loading="lazy" decoding="async" alt="Copy Text On Screen selecting text from a screenshot" /></span>
-    <span className="copy-preview-toolbar" aria-hidden="true"><span>English <span className="copy-language-chevron" /></span><span>HandwrittenText</span><span className="copy-handwriting-checkbox" /></span>
-  </span>
+function FittedCatalogScreen({ slug, name }) {
+  return <img className="catalog-fitted-screen" src={`/product-screenshots/${slug}-surface-2.png`} width="720" height="1520" loading="lazy" decoding="async" alt={`${name} app screen`} />
 }
 
 export default function AiProductCatalog() {
   return <section id="ai-products" className="ai-catalog" aria-labelledby="catalog-heading">
     <div className="catalog-heading"><p className="section-label">Our products</p><h2 id="catalog-heading">Built by APPZYS. Used every day.</h2><p>Our own mobile products turn images, documents and conversations into useful information. Explore the apps and the product experience behind our engineering.</p></div>
     <div className="product-panel-list">
-      {FALLBACK_CASE_STUDIES.slice(0, 3).map(app => <article className={`product-panel catalog-${PRODUCT_LISTINGS[app.slug].accent}`} key={app.slug} data-product={app.slug}>
+      {FALLBACK_CASE_STUDIES.slice(0, 3).map(app => <article id={app.slug} className={`product-panel catalog-${PRODUCT_LISTINGS[app.slug].accent}`} key={app.slug} data-product={app.slug}>
         <div className="product-panel-visual">
           <div className="product-preview-copy">
             <p className="product-preview-headline">{PRODUCT_PREVIEW_COPY[app.slug].headline}</p>
             <p className="product-preview-description">{PRODUCT_PREVIEW_COPY[app.slug].description}</p>
           </div>
           <div className="product-screen-gallery" aria-label={`${app.appName} Google Play screenshots`}>
-            {screenshots[app.slug].slice(0, 2).map((screen, index) => <a className={index === 1 ? 'product-phone-frame' : 'product-poster'} href={screen.src} target="_blank" rel="noopener noreferrer" key={screen.src} aria-label={`View ${app.appName} screenshot ${index + 1} full size (opens in new tab)`}>{index === 1 && <PhoneStatusBar />}<span className={index === 1 ? 'product-phone-screen' : 'product-poster-screen'}>{index === 1 && app.slug === 'ai-text-scanner' ? <ScannerScreenPreview /> : index === 1 && app.slug === 'copy-text-on-screen' ? <CopyScreenPreview screen={screen} /> : <img src={screen.src} width={screen.width} height={screen.height} loading="lazy" decoding="async" alt={`${app.appName} app preview from the official store listing ${index + 1}`} />}</span>{index === 1 && <img className="product-device-overlay" src="/product-screenshots/device-frame.png" alt="" aria-hidden="true" width="1440" height="2560" />}</a>)}
+            {screenshots[app.slug].slice(0, 2).map((screen, index) => <a className={index === 1 ? 'product-phone-frame' : 'product-poster'} href={screen.src} target="_blank" rel="noopener noreferrer" key={screen.src} aria-label={`View ${app.appName} screenshot ${index + 1} full size (opens in new tab)`}>{index === 1 && app.slug === 'ai-text-scanner' && <PhoneStatusBar />}<span className={index === 1 ? 'product-phone-screen' : 'product-poster-screen'}>{index === 1 && app.slug === 'ai-text-scanner' ? <ScannerScreenPreview /> : index === 1 ? <FittedCatalogScreen slug={app.slug} name={app.appName} /> : <img src={screen.src} width={screen.width} height={screen.height} loading="lazy" decoding="async" alt={`${app.appName} app preview from the official store listing ${index + 1}`} />}</span>{index === 1 && <img className="product-device-overlay" src="/product-screenshots/device-frame.png" alt="" aria-hidden="true" width="1440" height="2560" />}</a>)}
           </div>
           <p className="product-screen-caption">App screenshots · Tap to enlarge</p>
         </div>
@@ -71,6 +67,6 @@ export default function AiProductCatalog() {
       </article>)}
     </div>
     <p className="evidence-note">{METRICS_NOTE}</p>
-    <section className="catalog-more" aria-labelledby="more-products-heading"><div className="catalog-more-heading"><p className="section-label">More tools, built by us</p><h3 id="more-products-heading">More from APPZYS</h3></div><div className="catalog-more-grid">{otherProducts.map(app => <article className="catalog-small" key={app.slug}><ProductIcon slug={app.slug} /><div className="catalog-small-copy"><h4>{app.name}</h4><p>{app.summary}</p></div><div className="catalog-small-actions">{app.route && <Link className="text-link" to={app.route}>View case study</Link>}<ProductStoreLinks slug={app.slug} name={app.name} showAppStore={false} /></div></article>)}</div></section>
+    <section className="catalog-more" aria-labelledby="more-products-heading"><div className="catalog-more-heading"><p className="section-label">More tools, built by us</p><h3 id="more-products-heading">More from APPZYS</h3></div><div className="catalog-more-grid">{otherProducts.map(app => <article id={app.slug} className="catalog-small" key={app.slug}><ProductIcon slug={app.slug} /><div className="catalog-small-copy"><h4>{app.name}</h4><p>{app.summary}</p></div><div className="catalog-small-actions">{app.route && <Link className="text-link" to={app.route}>View case study</Link>}<ProductStoreLinks slug={app.slug} name={app.name} showAppStore={false} /></div></article>)}</div></section>
   </section>
 }
