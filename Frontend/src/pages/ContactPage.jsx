@@ -291,7 +291,7 @@ export default function ContactPage() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Vimal Kumar"
+                  placeholder="John Smith"
                   className="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:border-blue-500 focus:outline-none"
                 />
               </div>
