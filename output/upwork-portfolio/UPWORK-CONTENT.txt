@@ -1,0 +1,73 @@
+LIVE TRANSCRIBER
+
+Project title
+Live Transcriber | Flutter Speech-to-Text & AI App
+
+Your role
+Flutter Developer at APPZYS Technologies
+
+Project description
+I helped develop Live Transcriber, an APPZYS Flutter app that turns live conversations, meetings, and lectures into readable text. Users can capture speech in 110+ languages, revisit saved sessions, translate completed transcripts, improve readability with AI, generate summaries, and ask questions about a conversation. The experience connects live capture with transcript review and saved chat history, helping users continue working with spoken information after a session ends. Published on Google Play.
+
+Skills and deliverables — select up to five available Upwork tags
+Flutter
+Dart
+Mobile App Development
+Firebase
+AI Model Integration
+
+Project link
+https://play.google.com/store/apps/details?id=com.appzys.live.transcribe
+
+Website case study
+https://www.appzys.com/case-studies/live-transcribe
+
+Image upload order and captions
+00-thumbnail.png — Portfolio cover: real-time speech to text.
+01-live-capture.png — Follow live speech during meetings, classes, and conversations.
+02-transcript-studio.png — Review, translate, clean up, and summarize completed transcripts.
+03-workflow.png — Capture speech, review the session, and ask follow-up questions.
+
+
+AI STUDY TUTOR
+
+Project title
+AI Study Tutor | Flutter PDF Chat & Homework Helper
+
+Your role
+Flutter Developer at APPZYS Technologies
+
+Project description
+I helped develop AI Study Tutor, an APPZYS Flutter learning app that connects study material with AI explanations and revision tools. Users can chat with PDFs and documents, focus on selected pages, photograph homework questions, and explore step-by-step solutions through follow-up conversations. Summaries, flashcards, quizzes, and saved notes support revision. The app brings document learning and photo-based study help into one connected mobile experience. Published on Google Play.
+
+Skills and deliverables — select up to five available Upwork tags
+Flutter
+Dart
+Mobile App Development
+Firebase
+AI Model Integration
+
+Project link
+https://play.google.com/store/apps/details?id=com.appzys.pdfchat_aichatwithpdf
+
+Website case study
+https://www.appzys.com/case-studies/ai-study-tutor
+
+Image upload order and captions
+00-thumbnail.png — Portfolio cover: PDF chat, homework help, and revision.
+01-homework.png — Photograph a study question and explore each solution step.
+02-document-chat.png — Ask questions about study documents and focus on selected PDF pages.
+03-revision.png — Create summaries, flashcards, and quizzes from study material.
+
+
+PREPARATION NOTES
+
+The role wording follows your existing AI Transcript portfolio. Descriptions deliberately say “helped develop” and avoid unsupported claims of sole ownership, measured business results, or recognition accuracy.
+
+Flutter, Dart, and Firebase are supported by the website's owner-confirmed shared technology data. Android publication and feature wording were checked against Google Play on 23 November 2026. iOS availability has not been verified for these two apps, so the copy and images do not claim an App Store release.
+
+Case-study URLs follow the current repository routes and slugs; the deployed pages have not been independently checked.
+
+These are AI-generated portfolio mockups based on the supplied project app screens, not fresh device captures. Small UI text can differ from the original. Feature cards outside devices are marketing illustrations.
+
+The original Upwork portfolio link was inaccessible through web retrieval; the attached portfolio screenshot supplied the reference structure.

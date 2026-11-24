@@ -565,19 +565,38 @@ function saveLocalCaseStudies(studies) {
 
 async function request(path, options = {}) {
   const token = localStorage.getItem(AUTH_TOKEN_KEY)
+  const endpoint = `${API_BASE_URL}${path}`
   const headers = {
     'Content-Type': 'application/json',
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...(options.headers || {}),
   }
 
-  const response = await fetch(`${API_BASE_URL}${path}`, {
-    ...options,
-    headers,
-  })
+  let response
+  try {
+    response = await fetch(endpoint, {
+      ...options,
+      headers,
+    })
+  } catch (error) {
+    // Do not log request bodies: contact form payloads contain visitor data.
+    console.error('[Appzys API] Network request failed', {
+      method: options.method || 'GET',
+      endpoint,
+      error: error instanceof Error ? error.message : String(error),
+    })
+    throw error instanceof Error ? error : new Error('The inquiry service could not be reached.')
+  }
 
   const data = await response.json().catch(() => ({}))
   if (!response.ok) {
+    console.error('[Appzys API] Server request failed', {
+      method: options.method || 'GET',
+      endpoint,
+      status: response.status,
+      statusText: response.statusText,
+      responseMessage: data.message || null,
+    })
     throw new Error(data.message || 'Something went wrong. Please try again.')
   }
   return data
@@ -619,13 +638,25 @@ export const api = {
 
   // Submit Lead from Contact Form
   submitLead: async (payload) => {
+    console.info('[Appzys lead] Sending inquiry', {
+      endpoint: `${API_BASE_URL}/leads`,
+      sourcePage: payload.sourcePage || '/contact',
+    })
     const result = await request('/leads', {
       method: 'POST',
       body: JSON.stringify(payload),
     })
     if (!result.success || result.offline) {
-      throw new Error('Your inquiry could not be delivered. Please retry or email support@appzys.com. Your form has been kept here.')
+      console.error('[Appzys lead] Inquiry was not accepted by the backend', {
+        endpoint: `${API_BASE_URL}/leads`,
+        status: result.offline ? 'development-proxy-backend-offline' : 'unexpected-response',
+      })
+      throw new Error('Your inquiry could not be delivered. Please retry in a moment.')
     }
+    console.info('[Appzys lead] Inquiry accepted by the backend', {
+      endpoint: `${API_BASE_URL}/leads`,
+      leadId: result.data?.id ?? null,
+    })
     return result
   },
 

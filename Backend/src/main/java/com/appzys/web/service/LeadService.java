@@ -6,9 +6,13 @@ import com.appzys.web.repository.CostEstimateRepository;
 import com.appzys.web.repository.LeadRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class LeadService {
+
+    private static final Logger log = LoggerFactory.getLogger(LeadService.class);
 
     private final LeadRepository leadRepository;
     private final CostEstimateRepository costEstimateRepository;
@@ -28,10 +32,14 @@ public class LeadService {
     public Lead createLead(LeadRequest request) {
         // Silently ignore bot submissions that populate the hidden honeypot field
         if (request.website() != null && !request.website().isBlank()) {
+            log.warn("Rejected a project inquiry flagged by the honeypot field.");
             Lead dummy = new Lead();
             dummy.setName(request.name());
             return dummy;
         }
+
+        log.info("Saving project inquiry from source page {}.",
+                request.sourcePage() != null ? request.sourcePage() : "/contact");
 
         Lead lead = new Lead();
         lead.setName(request.name().trim());
@@ -45,6 +53,7 @@ public class LeadService {
         lead.setStatus("NEW");
 
         Lead saved = leadRepository.save(lead);
+        log.info("Project inquiry saved with lead ID {}.", saved.getId());
 
         if (request.estimateId() != null) {
             costEstimateRepository.findById(request.estimateId()).ifPresent(est -> {

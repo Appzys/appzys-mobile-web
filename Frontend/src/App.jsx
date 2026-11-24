@@ -26,12 +26,35 @@ import AdminCaseStudiesPage from './pages/admin/AdminCaseStudiesPage'
 function ScrollToLocation() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
+    let timeoutId = null
+    const tryScroll = () => {
+      if (hash) {
+        const target = document.getElementById(decodeURIComponent(hash.slice(1)))
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          return true
+        }
+        return false
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' })
+        return true
+      }
+    }
+
     const frame = requestAnimationFrame(() => {
-      const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null
-      if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' })
-      else window.scrollTo({ top: 0, behavior: 'instant' })
+      if (!tryScroll()) {
+        timeoutId = setTimeout(() => {
+          if (!tryScroll()) {
+            timeoutId = setTimeout(tryScroll, 160)
+          }
+        }, 60)
+      }
     })
-    return () => cancelAnimationFrame(frame)
+
+    return () => {
+      cancelAnimationFrame(frame)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
   }, [pathname, hash])
   return null
 }

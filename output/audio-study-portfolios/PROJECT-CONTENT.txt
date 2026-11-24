@@ -1,0 +1,136 @@
+AI TRANSCRIPT
+
+1. Project title
+AI Transcript | Flutter Audio & Video to Text App
+
+2. Project overview
+AI Transcript helps users turn meetings, interviews, lectures, and recorded media into readable text.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop the mobile experience connecting audio and video import, in-app recording, transcription, and transcript review. Users can read transcripts alongside audio playback, translate text, generate AI summaries, and ask questions about a recording.
+
+The app brings recording and follow-up tools into one workflow, helping users revisit spoken information through text and AI assistance. It is published on Google Play and the App Store.
+
+This project demonstrates my experience contributing to a production Flutter application involving media handling, transcription, playback, and AI integration.
+
+3. Cover image
+ai-transcript/00-cover.png
+
+4. Project files and captions, in order
+01-capture.png
+Import audio or video files, or record directly in the app to begin transcription.
+
+02-review.png
+Read the transcript alongside playback and translate text for further review.
+
+03-understand.png
+Explore recordings through transcript review, AI summaries, and follow-up questions.
+
+5. Category
+Mobile App Development, or the closest available category.
+
+6. Project URL
+https://play.google.com/store/apps/details?id=com.appzys.aitranscribe
+
+Additional App Store link
+https://apps.apple.com/app/id6755148200
+
+7. Completion date
+Enter the actual completion date of your contribution, or leave blank.
+
+8. Skills
+Flutter; Dart; Mobile App Development; Firebase; AI Model Integration
+
+Your role, if requested
+Flutter Developer at APPZYS Technologies
+
+
+LIVE TRANSCRIBER
+
+1. Project title
+Live Transcriber | Flutter Speech-to-Text & AI App
+
+2. Project overview
+Live Transcriber helps users capture conversations, meetings, and lectures as readable text while people speak.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop the mobile experience connecting live speech capture with transcript review and saved sessions. Users can choose from 110+ recognition languages, keep original transcripts, translate completed text, improve readability with AI, generate summaries, and ask questions about a conversation.
+
+The app keeps transcripts and follow-up tools together so users can continue working with spoken information after a live session ends. It is published on Google Play.
+
+This project demonstrates my experience contributing to a production Flutter application involving microphone integration, live transcription, session workflows, and AI assistance.
+
+3. Cover image
+live-transcriber/00-cover.png
+
+4. Project files and captions, in order
+01-live-capture.png
+Follow live speech as text during meetings, classes, and everyday conversations.
+
+02-transcript-studio.png
+Review completed transcripts, translate text, improve readability, and summarize key points.
+
+03-workflow.png
+Capture speech, review the session, and ask follow-up questions about the transcript.
+
+5. Category
+Mobile App Development, or the closest available category.
+
+6. Project URL
+https://play.google.com/store/apps/details?id=com.appzys.live.transcribe
+
+7. Completion date
+Enter the actual completion date of your contribution, or leave blank.
+
+8. Skills
+Flutter; Dart; Mobile App Development; Firebase; AI Model Integration
+
+Your role, if requested
+Flutter Developer at APPZYS Technologies
+
+
+AI STUDY TUTOR
+
+1. Project title
+AI Study Tutor | Flutter PDF Chat & Homework Helper
+
+2. Project overview
+AI Study Tutor helps students and self-learners understand documents, work through difficult questions, and prepare revision material.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop the mobile experience connecting PDF and document conversations with photo-based study questions. Users can focus on selected pages, explore step-by-step explanations, ask follow-up questions, and revisit saved learning sessions. Summaries, flashcards, quizzes, and saved notes support revision.
+
+The app brings study material, explanations, and practice tools into one connected workflow. It is published on Google Play.
+
+This project demonstrates my experience contributing to a production Flutter application involving document handling, AI conversations, structured educational content, and study workflows.
+
+3. Cover image
+ai-study-tutor/00-cover.png
+
+4. Project files and captions, in order
+01-homework.png
+Photograph a study question and explore its solution through step-by-step explanations.
+
+02-document-chat.png
+Ask questions about PDFs and study material, with support for selected-page context.
+
+03-revision.png
+Turn study material into summaries, flashcards, and quizzes for active revision.
+
+5. Category
+Mobile App Development, or the closest available category.
+
+6. Project URL
+https://play.google.com/store/apps/details?id=com.appzys.pdfchat_aichatwithpdf
+
+7. Completion date
+Enter the actual completion date of your contribution, or leave blank.
+
+8. Skills
+Flutter; Dart; Mobile App Development; Firebase; AI Model Integration
+
+Your role, if requested
+Flutter Developer at APPZYS Technologies
+
+
+NOTES
+All images use 4:3 layouts with extra side margins. Upload 00-cover separately and the three numbered showcase images under project files. These are built-in image_gen mockups based on existing project screens; small UI text may differ from original captures. Feature cards outside devices are illustrations.
+
+Role wording follows your existing AI Transcript portfolio. Do not claim sole authorship unless accurate. Shared Flutter/Firebase stack comes from owner-confirmed website data. No guessed project completion dates. Exact category and skill availability depends on the platform.

@@ -17,7 +17,7 @@ public class EmailNotificationService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${appzys.notify.email:}")
+    @Value("${appzys.notify.email:appzys.dev@gmail.com}")
     private String notifyEmail;
 
     @Value("${spring.mail.username:}")
@@ -30,8 +30,8 @@ public class EmailNotificationService {
     @Async
     public void sendLeadAlert(Lead lead) {
         if (mailSender == null || notifyEmail == null || notifyEmail.isBlank()) {
-            log.info("Lead #{} received from {} ({}). SMTP notification skipped (not configured).",
-                    lead.getId(), lead.getName(), lead.getEmail());
+            log.warn("Lead #{} was saved, but SMTP notification was skipped because email delivery is not configured.",
+                    lead.getId());
             return;
         }
 
@@ -41,9 +41,12 @@ public class EmailNotificationService {
                 msg.setFrom(fromEmail);
             }
             msg.setTo(notifyEmail);
-            msg.setSubject("New Appzys 48-Hr Audit Lead: " + lead.getName());
+            msg.setSubject("New Appzys Project Inquiry: " + lead.getName());
             msg.setText(String.format(
-                    "New mobile app inquiry received!%n%nName: %s%nEmail: %s%nPhone: %s%nCompany: %s%nService: %s%nBudget: %s%nMessage:%n%s",
+                    "New project inquiry received.%n%nLead ID: %s%nReceived (UTC): %s%nSource page: %s%n%nName: %s%nEmail: %s%nPhone / WhatsApp: %s%nCompany / Startup: %s%nProject focus: %s%nBudget range: %s%n%nProject details:%n%s",
+                    lead.getId(),
+                    lead.getCreatedAt(),
+                    lead.getSourcePage() != null ? lead.getSourcePage() : "/contact",
                     lead.getName(),
                     lead.getEmail(),
                     lead.getPhone() != null ? lead.getPhone() : "-",
@@ -53,6 +56,7 @@ public class EmailNotificationService {
                     lead.getMessage()
             ));
             mailSender.send(msg);
+            log.info("Lead alert email sent for lead #{}.", lead.getId());
         } catch (Exception ex) {
             // Never fail a lead save if SMTP is temporarily unreachable
             log.warn("Failed to send lead alert email for lead #{}: {}", lead.getId(), ex.getMessage());

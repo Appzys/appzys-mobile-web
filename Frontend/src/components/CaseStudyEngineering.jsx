@@ -4,26 +4,49 @@ import { PRODUCT_TECHNOLOGY } from '../data/productEngineering'
 const icons = { mobile: Smartphone, layers: Layers, cloud: Cloud, database: Database, storage: HardDrive, activity: Activity }
 
 function DiagramCard({ icon: Icon, label, title, children }) {
-  return <div className="architecture-node"><Icon size={24} aria-hidden="true" /><div><span className="architecture-node-label">{label}</span><h3>{title}</h3><p>{children}</p></div></div>
+  return (
+    <div className="architecture-node">
+      <span className="architecture-icon-wrap"><Icon size={22} aria-hidden="true" /></span>
+      <div>
+        <span className="architecture-node-label">{label}</span>
+        <h3>{title}</h3>
+        <p>{children}</p>
+      </div>
+    </div>
+  )
 }
 
 export function CaseStudyArchitecture({ name, features }) {
-  return <figure className="architecture-board" aria-label={`${name} feature-based MVVM architecture`}>
-    <div className="architecture-board-heading"><Smartphone size={24} aria-hidden="true" /><div><strong>{name}</strong><span>Flutter application · Dart</span></div><span className="architecture-badge">Feature-based MVVM</span></div>
-    <div className="architecture-features">{features.map(([title]) => <span key={title}>{title}</span>)}</div>
-    <div className="architecture-client">
-      <DiagramCard icon={Smartphone} label="Presentation" title="Views">Flutter screens and reusable widgets</DiagramCard>
-      <DiagramCard icon={Layers} label="State & coordination" title="ViewModels · Provider">UI state and feature interactions</DiagramCard>
-      <DiagramCard icon={Database} label="Application data" title="Models & data access">Typed data and persistence boundaries</DiagramCard>
-    </div>
-    <div className="architecture-connector"><span>Application data & services</span></div>
-    <div className="architecture-services">
-      <DiagramCard icon={HardDrive} label="On the device" title="Local persistence">Hive · SharedPreferences</DiagramCard>
-      <DiagramCard icon={Cloud} label="Firebase backend" title="Cloud services">Cloud Firestore · Cloud Functions</DiagramCard>
-    </div>
-    <div className="architecture-observability"><Activity size={20} aria-hidden="true" /><strong>Quality & product insights</strong><span>Firebase Crashlytics</span><span>Firebase Analytics</span></div>
-    <figcaption>Architecture overview based on the shared stack confirmed by APPZYS. Feature responsibilities vary by product.</figcaption>
-  </figure>
+  return (
+    <figure className="architecture-board" aria-label={`${name} feature-based MVVM architecture`}>
+      <div className="architecture-board-heading">
+        <span className="architecture-brand-icon"><Smartphone size={24} aria-hidden="true" /></span>
+        <div>
+          <strong>{name}</strong>
+          <span>Flutter application · Dart</span>
+        </div>
+        <span className="architecture-badge">Feature-based MVVM</span>
+      </div>
+      <div className="architecture-features">{features.map(([title]) => <span key={title}>{title}</span>)}</div>
+      <div className="architecture-client">
+        <DiagramCard icon={Smartphone} label="Presentation" title="Views">Flutter screens and reusable widgets</DiagramCard>
+        <DiagramCard icon={Layers} label="State & coordination" title="ViewModels · Provider">UI state and feature interactions</DiagramCard>
+        <DiagramCard icon={Database} label="Application data" title="Models & data access">Typed data and persistence boundaries</DiagramCard>
+      </div>
+      <div className="architecture-connector"><span>Application data & services</span></div>
+      <div className="architecture-services">
+        <DiagramCard icon={HardDrive} label="On the device" title="Local persistence">Hive · SharedPreferences</DiagramCard>
+        <DiagramCard icon={Cloud} label="Firebase backend" title="Cloud services">Cloud Firestore · Cloud Functions</DiagramCard>
+      </div>
+      <div className="architecture-observability">
+        <span className="architecture-icon-wrap"><Activity size={20} aria-hidden="true" /></span>
+        <strong>Quality & product insights</strong>
+        <span className="architecture-chip">Firebase Crashlytics</span>
+        <span className="architecture-chip">Firebase Analytics</span>
+      </div>
+      <figcaption>Architecture overview based on the shared stack confirmed by APPZYS. Feature responsibilities vary by product.</figcaption>
+    </figure>
+  )
 }
 
 export function CaseStudyStack() {

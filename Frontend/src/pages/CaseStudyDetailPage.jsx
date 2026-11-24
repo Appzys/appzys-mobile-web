@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Check, Layers, ScanText, ShieldCheck } from 'lucide-react'
 import SeoHead from '../components/SeoHead'
@@ -19,6 +20,49 @@ export default function CaseStudyDetailPage() {
   const study = FALLBACK_CASE_STUDIES.find(app => app.slug === slug)
   const details = CASE_STUDY_DETAILS[slug]
   const story = PRODUCT_STORIES[slug]
+  const [activeSection, setActiveSection] = useState(CASE_STUDY_SECTIONS[0][0])
+  const sidebarNavRef = useRef(null)
+
+  useEffect(() => {
+    const sections = CASE_STUDY_SECTIONS.map(([id]) => document.getElementById(id)).filter(Boolean)
+    let frame = null
+
+    const updateActiveSection = () => {
+      frame = null
+      const readingLine = Math.min(180, window.innerHeight * 0.35)
+      let active = sections[0]
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= readingLine) {
+          active = section
+        }
+      }
+      if (active) {
+        setActiveSection(active.id)
+      }
+    }
+
+    const scheduleUpdate = () => {
+      if (frame === null) frame = window.requestAnimationFrame(updateActiveSection)
+    }
+
+    updateActiveSection()
+    window.addEventListener('scroll', scheduleUpdate, { passive: true })
+    window.addEventListener('resize', scheduleUpdate)
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate)
+      window.removeEventListener('resize', scheduleUpdate)
+      if (frame !== null) window.cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!activeSection || !sidebarNavRef.current) return
+    const activeLink = sidebarNavRef.current.querySelector(`a[href="#${activeSection}"]`)
+    if (activeLink) {
+      activeLink.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' })
+    }
+  }, [activeSection])
+
   if (!study || !details || !story) return <div className="section-shell section-space"><h1 className="text-3xl font-bold">Product story not found</h1><Link className="text-link" to="/case-studies">Explore all products</Link></div>
   const screens = screenshots[slug] || []
   const listing = PRODUCT_LISTINGS[slug]
@@ -39,7 +83,7 @@ export default function CaseStudyDetailPage() {
 
       <section id="project-facts" className="case-facts" aria-labelledby="case-facts-title"><h2 id="case-facts-title">Project facts</h2><dl>{[['Product owner', 'APPZYS'], ['Engagement', 'In-house product'], ['Platforms', listing.apple ? 'Android & iOS' : 'Android'], ['Product focus', study.category]].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></section>
       <div className="case-layout">
-        <aside className="case-sidebar"><nav aria-label="Case study sections"><p>Inside this case study</p>{CASE_STUDY_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav></aside>
+        <aside className="case-sidebar"><nav ref={sidebarNavRef} aria-label="Case study sections"><p>Inside this case study</p>{CASE_STUDY_SECTIONS.map(([id, label]) => <a key={id} href={`#${id}`} className={activeSection === id ? 'is-active' : ''} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}</nav></aside>
         <div className="case-content">
           <section id="project-summary" className="case-section"><SectionHeading label="Project summary" title="One focused product. A useful everyday workflow." /><p className="case-large-copy">{study.summary}</p><div className="case-value"><Layers size={24} /><p>{details.value}</p></div></section>
           <section id="client-context" className="case-section"><SectionHeading label="Client context" title="Our product. Our ongoing responsibility." /><p>{details.context}</p><div className="case-context"><span>Built for</span><strong>{details.audience}</strong></div></section>

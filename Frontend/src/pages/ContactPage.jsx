@@ -139,7 +139,7 @@ export default function ContactPage() {
     } catch (err) {
       setStatus({
         type: 'error',
-        text: 'Your inquiry could not be delivered. Please retry or email support@appzys.com. Your form has been kept here.',
+        text: 'Your inquiry could not be delivered. Please retry in a moment. Your form details are still shown above.',
       })
     } finally {
       setSubmitting(false)
@@ -224,7 +224,7 @@ export default function ContactPage() {
             </div>
             <div className="flex items-start gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-blue-300" />
-              <span>Chennai / Kanchipuram, Tamil Nadu, India</span>
+              <span>Guindy, Chennai, Tamil Nadu, India</span>
             </div>
           </div>
         </div>

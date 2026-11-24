@@ -25,25 +25,25 @@ function Phone({ x = 78, y = 40 }) {
       <rect x="37" y="150" width="30" height="3" rx="1.5" fill="#edf1f7" />
     </g>
     <g clipPath={`url(#${id}-screen)`}><rect className="phone-screen-shimmer" x="-60" y="27" width="55" height="130" fill={`url(#${id}-shine)`} /></g>
-    <rect x="17" y="164" width="70" height="10" rx="4" fill="#245fce" />
+    <rect x="17" y="164" width="70" height="10" rx="4" fill="#dce5f2" />
     <rect x="38" y="178" width="28" height="2" rx="1" fill="#a9b8cd" />
   </g>
 }
 
 function LaunchVisual() {
-  return <><Phone x={78} y={28} /><g transform="translate(78 232)"><rect width="104" height="24" rx="6" fill="#203b62" /><text x="52" y="16" textAnchor="middle" fill="#dce9ff" fontSize="10" fontFamily="Inter, sans-serif">Android &amp; iOS</text></g></>
+  return <><Phone x={78} y={28} /><g transform="translate(78 232)"><rect width="104" height="24" rx="6" fill="#d1deff" /><text x="52" y="16" textAnchor="middle" fill="#0A192F" fontSize="10" fontFamily="Inter, sans-serif">Android &amp; iOS</text></g></>
 }
 
 function ConnectVisual() {
-  return <><Phone x={132} y={40} /><g transform="translate(24 56)"><rect width="82" height="74" rx="10" fill="#203b62" stroke="#4d6b93" /><Cloud x="26" y="13" size={30} color="#dce9ff" /><text x="41" y="59" textAnchor="middle" fill="#c1d3ed" fontSize="10" fontFamily="Inter, sans-serif">Backend</text></g><g transform="translate(24 146)"><rect width="82" height="74" rx="10" fill="#203b62" stroke="#4d6b93" /><Database x="27" y="14" size={28} color="#dce9ff" /><text x="41" y="59" textAnchor="middle" fill="#c1d3ed" fontSize="10" fontFamily="Inter, sans-serif">Data &amp; APIs</text></g></>
+  return <><Phone x={132} y={40} /><g transform="translate(24 56)"><rect width="82" height="74" rx="10" fill="#ffffff" stroke="#cde0f7" /><Cloud x="26" y="13" size={30} color="#1545a2" /><text x="41" y="59" textAnchor="middle" fill="#122b4e" fontSize="10" fontFamily="Inter, sans-serif">Backend</text></g><g transform="translate(24 146)"><rect width="82" height="74" rx="10" fill="#ffffff" stroke="#cde0f7" /><Database x="27" y="14" size={28} color="#1545a2" /><text x="41" y="59" textAnchor="middle" fill="#122b4e" fontSize="10" fontFamily="Inter, sans-serif">Data &amp; APIs</text></g></>
 }
 
 function ImproveVisual() {
-  return <><Phone x={24} y={40} /><g transform="translate(154 56)"><rect width="82" height="74" rx="10" fill="#203b62" stroke="#4d6b93" /><Wrench x="26" y="13" size={30} color="#dce9ff" /><text x="41" y="59" textAnchor="middle" fill="#c1d3ed" fontSize="10" fontFamily="Inter, sans-serif">Maintain</text></g><g transform="translate(154 146)"><rect width="82" height="74" rx="10" fill="#203b62" stroke="#4d6b93" /><ShieldCheck x="26" y="13" size={30} color="#dce9ff" /><text x="41" y="59" textAnchor="middle" fill="#c1d3ed" fontSize="10" fontFamily="Inter, sans-serif">Validate</text></g></>
+  return <><Phone x={24} y={40} /><g transform="translate(154 56)"><rect width="82" height="74" rx="10" fill="#ffffff" stroke="#cde0f7" /><Wrench x="26" y="13" size={30} color="#1545a2" /><text x="41" y="59" textAnchor="middle" fill="#122b4e" fontSize="10" fontFamily="Inter, sans-serif">Maintain</text></g><g transform="translate(154 146)"><rect width="82" height="74" rx="10" fill="#ffffff" stroke="#cde0f7" /><ShieldCheck x="26" y="13" size={30} color="#1545a2" /><text x="41" y="59" textAnchor="middle" fill="#122b4e" fontSize="10" fontFamily="Inter, sans-serif">Validate</text></g></>
 }
 
 function TeamVisual() {
-  return <><g transform="translate(24 40)"><rect width="212" height="130" rx="10" fill="#f6f9ff" /><rect width="212" height="26" rx="10" fill="#dce6f5" /><rect y="16" width="212" height="10" fill="#dce6f5" /><rect x="12" y="10" width="40" height="5" rx="2" fill="#93a9c9" /><Code2 x="18" y="55" size={32} color="#2463eb" /><rect x="70" y="52" width="114" height="5" rx="2" fill="#44658e" /><rect x="70" y="66" width="85" height="5" rx="2" fill="#8ca8d0" /><rect x="70" y="80" width="98" height="5" rx="2" fill="#c0d2ed" /><rect x="18" y="108" width="166" height="5" rx="2" fill="#dce9ff" /></g>{[58,130,202].map(x=><g key={x} transform={`translate(${x-25} 190)`}><rect width="50" height="50" rx="10" fill="#203b62" stroke="#4d6b93" /><circle cx="25" cy="17" r="7" fill="#c1d3ed" /><path d="M13 37a12 12 0 0 1 24 0" fill="#c1d3ed" /></g>)}</>
+  return <><g transform="translate(24 40)"><rect width="212" height="130" rx="10" fill="#f6f9ff" /><rect width="212" height="26" rx="10" fill="#dce6f5" /><rect y="16" width="212" height="10" fill="#dce6f5" /><rect x="12" y="10" width="40" height="5" rx="2" fill="#93a9c9" /><Code2 x="18" y="55" size={32} color="#2463eb" /><rect x="70" y="52" width="114" height="5" rx="2" fill="#44658e" /><rect x="70" y="66" width="85" height="5" rx="2" fill="#8ca8d0" /><rect x="70" y="80" width="98" height="5" rx="2" fill="#c0d2ed" /><rect x="18" y="108" width="166" height="5" rx="2" fill="#dce9ff" /></g>{[58,130,202].map(x=><g key={x} transform={`translate(${x-25} 190)`}><rect width="50" height="50" rx="10" fill="#ffffff" stroke="#cde0f7" /><circle cx="25" cy="17" r="7" fill="#1545a2" /><path d="M13 37a12 12 0 0 1 24 0" fill="#1545a2" /></g>)}</>
 }
 
 const ART = { launch: LaunchVisual, connect: ConnectVisual, improve: ImproveVisual, team: TeamVisual }

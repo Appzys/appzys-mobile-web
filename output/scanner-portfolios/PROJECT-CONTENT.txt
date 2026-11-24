@@ -1,0 +1,126 @@
+READY-TO-PASTE PROJECT CONTENT
+
+AI TEXT SCANNER
+
+Project title
+AI Text Scanner | Flutter OCR & Document Scanning App
+
+Your role (if requested)
+Flutter Developer at APPZYS Technologies
+
+Short description (for the 600-character field)
+I helped develop AI Text Scanner, an APPZYS Flutter app that turns photos, PDFs, and scanned documents into editable text. Users can capture and crop documents, review OCR results, copy and share text, translate content, and use AI to summarize or ask questions about images and PDFs. The app connects document capture, text extraction, and follow-up tools in one mobile workflow. Published on Google Play.
+
+Project overview (for the 4,000-character field)
+AI Text Scanner helps users move information from printed pages, images, and PDFs into editable digital content without manually retyping it.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop the mobile experience connecting document capture and import with OCR results and document tools. Users can adjust document boundaries, review recognized text alongside the source, edit and copy results, translate content, and share useful information. AI assistance supports summarization and questions about images and PDFs.
+
+The product brings capture, extraction, and document assistance into one workflow. It is published on Google Play, where its listing reports 100K+ downloads. This project demonstrates my experience contributing to a production Flutter application with OCR, file handling, document workflows, and AI integration.
+
+Project URL
+https://play.google.com/store/apps/details?id=com.offline.ocr.english.image.to.text.scanner
+
+Suggested category
+Choose the closest available mobile app development category.
+
+Suggested skills
+Flutter; Dart; Mobile App Development; Optical Character Recognition; AI Model Integration
+If a tag is unavailable, select the closest accurate tag offered by the platform.
+
+Cover image
+ai-text-scanner/00-cover.png
+
+Project files, in upload order
+01-extraction.png — Review extracted text alongside the original page.
+02-document-scan.png — Capture documents and adjust page boundaries.
+03-toolkit.png — Extract text, translate content, and use AI summaries.
+
+
+COPY TEXT ON SCREEN
+
+Project title
+Copy Text On Screen | Flutter Screenshot OCR App
+
+Your role (if requested)
+Flutter Developer at APPZYS Technologies
+
+Short description (for the 600-character field)
+I helped develop Copy Text On Screen, an APPZYS Flutter utility for extracting text from screenshots and images when normal text selection is unavailable. Users share a screenshot, select the required area, and review recognized text before copying, sharing, saving, or translating it. Scan history keeps previous results accessible. The app connects screenshot sharing, region selection, OCR, and clipboard tools in one focused workflow. Published on Google Play.
+
+Project overview (for the 4,000-character field)
+Copy Text On Screen addresses a common mobile problem: useful text in screenshots and images cannot always be selected or copied directly.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop the screenshot-to-text experience. Users share a screenshot with the app, select the relevant region, choose a recognition language, and review the extracted result. They can then copy the text to the clipboard, share it, translate it, or save it for later. Scan history supports revisiting previous results.
+
+The workflow helps users reuse information from image-based content without manually typing it again. The product is published on Google Play, where its listing reports 500K+ downloads. This project demonstrates my experience contributing to a focused production mobile utility involving shared-image input, text-region selection, OCR, translation, and clipboard integration.
+
+Project URL
+https://play.google.com/store/apps/details?id=com.copy.paste.ocr.screen.text.copy.text.on.screen
+
+Suggested category
+Choose the closest available mobile app development category.
+
+Suggested skills
+Flutter; Dart; Mobile App Development; Optical Character Recognition; Firebase
+If a tag is unavailable, select the closest accurate tag offered by the platform.
+
+Cover image
+copy-text-on-screen/00-cover.png
+
+Project files, in upload order
+01-select.png — Select the text area within a shared screenshot.
+02-copy.png — Turn a selected screenshot region into reusable text.
+03-reuse.png — Copy, share, translate, and revisit extracted text.
+
+
+HANDWRITING TO TEXT SCANNER
+
+Project title
+Handwriting to Text Scanner | Flutter OCR Notes App
+
+Your role (if requested)
+Flutter Developer at APPZYS Technologies
+
+Short description (for the 600-character field)
+I helped develop Handwriting to Text Scanner, an APPZYS Flutter app for turning handwritten notes into editable digital text. Users can capture pages with the camera, import images or PDFs, process multiple images, and review recognized text. Editing, translation, copying, sharing, and folder organization connect recognition with everyday note management. The app helps users digitize and reuse handwritten material. Published on Google Play.
+
+Project overview (for the 4,000-character field)
+Handwriting to Text Scanner helps students and professionals move handwritten material from paper into editable, organized digital notes.
+
+As a Flutter Developer at APPZYS Technologies, I helped develop a mobile workflow connecting page capture and import with handwriting recognition and note management. Users can bring in camera images, gallery files, or PDFs, process images in batches, and review the recognized text. They can correct the result, copy and share it, translate the content, and organize scans into folders.
+
+The product connects recognition with practical follow-up actions so handwritten content can be reused after scanning. It is published on Google Play, where its listing reports 10K+ downloads. This project demonstrates my experience contributing to a production Flutter application involving handwriting OCR, batch input, editable recognition results, and document organization.
+
+Project URL
+https://play.google.com/store/apps/details?id=com.appzys.handwriting.ocr.handyscan
+
+Suggested category
+Choose the closest available mobile app development category.
+
+Suggested skills
+Flutter; Dart; Mobile App Development; Optical Character Recognition; Firebase
+If a tag is unavailable, select the closest accurate tag offered by the platform.
+
+Cover image
+handwriting-to-text-scanner/00-cover.png
+
+Project files, in upload order
+01-convert.png — Review handwriting beside its digital text result.
+02-library.png — Manage batch imports and organize scans into folders.
+03-workflow.png — Capture, review, edit, translate, and share handwritten notes.
+
+
+FORM AND SOURCE NOTES
+
+Completion date: use the actual date your contribution or release was completed. Leave this optional field blank if you are unsure; do not use today's date merely because the portfolio was prepared today.
+
+The screenshots do not show the category dropdown options, so no exact platform category label is asserted.
+
+Cover images are 4:3 and exceed the shown 960 x 720 minimum. Showcase images use a landscape 16:9 layout. Upload the cover separately and the three showcase images under project files.
+
+The “helped develop” role wording follows your existing AI Transcript portfolio. Descriptions avoid claiming sole authorship or specific unverified engineering contributions. Flutter and shared technology context come from the repository's owner-confirmed case-study data.
+
+Features and Google Play download bands checked on 23 November 2026 against the project URLs above. Download counts describe product adoption, not a result attributed solely to your contribution. No recognition accuracy guarantees are included.
+
+Images are AI-generated marketing mockups based on project app screenshots. Small in-device text may differ from source captures. Floating cards outside devices are editorial illustrations, not additional app screens.
